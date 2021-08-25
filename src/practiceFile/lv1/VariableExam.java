@@ -1,3 +1,4 @@
+package practiceFile.lv1;
 
 public class VariableExam {
 	public static void main(String[] args) {

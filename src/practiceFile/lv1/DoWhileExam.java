@@ -1,3 +1,4 @@
+package practiceFile.lv1;
 
 import java.util.Scanner;
 
