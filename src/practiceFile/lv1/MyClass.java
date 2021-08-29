@@ -5,7 +5,7 @@ public class MyClass {
 		System.out.println("m1이 실행됨."); 
 	}
 	
-	public void mehtod2(int x) { //매개변수가 있고 리턴 타입이 없는 경우
+	public void method2(int x) { //매개변수가 있고 리턴 타입이 없는 경우
 		System.out.println(x + "를 이용한 m2실행됨.");
 	}
 	
