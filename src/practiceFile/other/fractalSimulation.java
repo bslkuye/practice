@@ -25,13 +25,13 @@ public class fractalSimulation {
 		
 //		System.out.print(random.nextInt(4));
 		int pixelSum = 0;
-		for(;pixelSum < 500 ; ) { //생성된 픽셀 수 확인
+		for(;pixelSum < 3000 ; ) { //생성된 픽셀 수 확인
 			
 			int x = random.nextInt(gl);
 			int y = random.nextInt(gl);
 			int check = (x - 50) * (x - 50) + (y - 50) * (y - 50);
 			
-			if(check > 25*25 && grid[x][y] == false) {   //중점에서 일정거리 이상 떨어져 있으면 위치에 픽셀 생성
+			if(check > 0 && grid[x][y] == false) {   //중점에서 일정거리 이상 떨어져 있으면 위치에 픽셀 생성
 				pixelSum++; //생성 성공, 픽셀 총합 1증가
 				
 				//시각화
