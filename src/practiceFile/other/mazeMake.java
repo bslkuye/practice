@@ -26,7 +26,7 @@ public class mazeMake {
 			}
 		}
 		
-		grid[1][1] = -1; //길 시작점
+		grid[1][1] = 0; //길 시작점
 		int x = 1;
 		int y = 1;
 		grid[x+1][y] = 1;
@@ -36,7 +36,7 @@ public class mazeMake {
 //		boolean finish = false;
 		
 		
-		for(int i = 0; i < 10000 ; i++) {
+		for(int i = 0; i < 100000 ; i++) {
 			int move = random.nextInt(4);
 			switch(move) {
 			case 0: //상 y++
@@ -45,8 +45,10 @@ public class mazeMake {
 					grid[x][y] = -1;
 					grid[x+1][y]++;
 					grid[x-1][y]++;
-					grid[x][y-1]++;
+//					grid[x][y-1]++;
 					grid[x][y+1]++;
+				}else if (grid[x][y+1]<=0) {
+					y++;
 				}
 				break;
 			case 1: //하 y--
@@ -56,17 +58,21 @@ public class mazeMake {
 					grid[x+1][y]++;
 					grid[x-1][y]++;
 					grid[x][y-1]++;
-					grid[x][y+1]++;
+//					grid[x][y+1]++;
+				}else if (grid[x][y-1]<=0) {
+					y--;
 				}
 				break;
 			case 2: //좌 
 				if(grid[x-1][y]==1) {
 					x--;
 					grid[x][y] = -1;
-					grid[x+1][y]++;
+//					grid[x+1][y]++;
 					grid[x-1][y]++;
 					grid[x][y-1]++;
 					grid[x][y+1]++;
+				}else if (grid[x-1][y]<=0) {
+					x--;
 				}
 				break;
 			case 3: //우 
@@ -74,9 +80,11 @@ public class mazeMake {
 					x++;
 					grid[x][y] = -1;
 					grid[x+1][y]++;
-					grid[x-1][y]++;
+//					grid[x-1][y]++;
 					grid[x][y-1]++;
 					grid[x][y+1]++;
+				}else if (grid[x+1][y]<=0) {
+					x++;
 				}
 			}
 		}
@@ -84,13 +92,14 @@ public class mazeMake {
 		
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
+//				System.out.print(grid[i][j]+1);
 				if(grid[i][j] == 1 ) {//가능한길
 					System.out.print("□ ");
 				}
 				if(grid[i][j] >= 2){//벽
 					System.out.print("■ ");
 				}
-				if(grid[i][j] == 0){//길
+				if(grid[i][j] <= 0){//길
 					System.out.print("  ");
 				}
 			}
