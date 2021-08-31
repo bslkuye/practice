@@ -35,8 +35,9 @@ public class mazeMake {
 		random.setSeed(System.currentTimeMillis());
 //		boolean finish = false;
 		
-		int move = random.nextInt(4);
-		for(int i = 0; i < 100 ; i++) {
+		
+		for(int i = 0; i < 10000 ; i++) {
+			int move = random.nextInt(4);
 			switch(move) {
 			case 0: //상 y++
 				if(grid[x][y+1]==1) {
@@ -79,17 +80,18 @@ public class mazeMake {
 				}
 			}
 		}
+		grid[x][y] = 0;
 		
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
-				if(grid[i][j] == 1) {//가능한길
+				if(grid[i][j] == 1 ) {//가능한길
 					System.out.print("□ ");
 				}
 				if(grid[i][j] >= 2){//벽
 					System.out.print("■ ");
 				}
 				if(grid[i][j] == 0){//길
-					System.out.print("● ");
+					System.out.print("  ");
 				}
 			}
 			System.out.println("");
