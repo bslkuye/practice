@@ -3,38 +3,13 @@ package practiceFile.other;
 import java.util.Random;
 
 public class mazeMake {
-	
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		int gridLength = 100;
-		int[][] grid = new int[gridLength][gridLength];
-		
-		for(int i = 0; i < gridLength; i++) {
-			for(int l = 0; l < gridLength; l++) {
-				grid[i][l] = 0; // 0 길 1 길이뻗을수 있음 2 벽
-			}
-		} // 격자생성, 초기화
-		
-		for(int i = 0; i < gridLength; i++) {
-			for(int l = 0; l < gridLength; l++) {
-				grid[i][0] = 2;
-				grid[i][gridLength-1] = 2;
-				grid[0][l] = 2;
-				grid[gridLength-1][l] = 2;
-			}
-		}
-		
-		grid[1][1] = 0; //길 시작점
-		int x = 1;
-		int y = 1;
-		grid[x+1][y] = 1;
-		grid[x][y+1] = 1;
+	static int gridLength = 100;
+	static int[][] grid = new int[gridLength][gridLength];
+	static boolean endCheck = false;
+
+	public static void roadMake(int x, int y) {
 		Random random = new Random();
 		random.setSeed(System.currentTimeMillis());
-//		boolean finish = false;
-		
 		
 		for(int i = 0; i < 100000 ; i++) {
 			int move = random.nextInt(4);
@@ -87,8 +62,51 @@ public class mazeMake {
 					x++;
 				}
 			}
+			if(x == gridLength - 2 && y == gridLength - 2) {
+				System.out.println("end!");
+				if(grid[gridLength-2][gridLength-3] == 1)
+					grid[gridLength-2][gridLength-3] = 2;
+				if(grid[gridLength-3][gridLength-2] == 1)
+					grid[gridLength-3][gridLength-2] = 2;
+				endCheck = true;
+				break;
+			}
 		}
-		grid[x][y] = 0;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		while(endCheck == false) {
+			for(int i = 0; i < gridLength; i++) {
+				for(int j = 0; j < gridLength; j++) {
+					grid[i][j] = 0; // 0 길 1 길이뻗을수 있음 2 벽
+				}
+			} // 격자생성, 초기화
+			
+			for(int i = 0; i < gridLength; i++) {
+				for(int l = 0; l < gridLength; l++) {
+					grid[i][0] = 2;
+					grid[i][gridLength-1] = 2;
+					grid[0][l] = 2;
+					grid[gridLength-1][l] = 2;
+				}
+			}
+			
+			grid[1][1] = 0; //길 시작점
+			grid[2][1] = 1;
+			grid[1][2] = 1;
+			for(int i = 0; i < gridLength; i++) {
+				for(int j = 0; j < gridLength; j++) {
+					if(grid[i][j]==1) {
+						roadMake(i,j);
+					}
+				}
+			}
+			
+		}
+//		grid[x][y] = 0;
 		
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
