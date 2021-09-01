@@ -7,7 +7,7 @@ public class mazeMake {
 	static int[][] grid = new int[gridLength][gridLength];
 	static int[][] finder = new int[gridLength][gridLength];
 	static boolean endCheck = false;
-	
+
 	public static void roadPrint() {
 		System.out.println("rPrint");
 		for(int i = 0; i < gridLength; i++) {
@@ -24,7 +24,7 @@ public class mazeMake {
 
 		}
 	}
-	
+
 	public static void roadFindPrint() {
 		System.out.println("rFindPrint");
 		for(int i = 0; i < gridLength; i++) {
@@ -36,12 +36,12 @@ public class mazeMake {
 				}else if(finder[i][j] > 2){//길
 					System.out.print("  ");
 				}else System.out.print("o ");
-				
+
 			}
 			System.out.println("");
 		}
 	}
-	
+
 	public static void roadMake(int x, int y) {
 		System.out.println("rMaker");
 		Random random = new Random();
@@ -118,7 +118,7 @@ public class mazeMake {
 		}
 		grid[1][1] = 0;
 	}
-	
+
 	public static void roadFind() {
 		System.out.println("rFind1");
 		for(int i = 0; i < gridLength; i++) {
@@ -133,7 +133,7 @@ public class mazeMake {
 		System.out.println("rFind2");
 
 		finder[1][1] = 3;
-		int stack = 1;			
+		int stack = 1;
 		while(finder[gridLength-2][gridLength-2] == 1 && stack < 1000) {
 			if(stack == 999) System.out.println("stack999");
 			stack++;
@@ -161,10 +161,10 @@ public class mazeMake {
 				a++;
 			}else if(finder[a][b - 1] == astack) {
 				b--;
-			}else if(finder[a][b + 1] == astack) b++;			
+			}else if(finder[a][b + 1] == astack) b++;
 			astack--;
 		}
-		
+
 	}
 	
 	public static void main(String[] args) {
