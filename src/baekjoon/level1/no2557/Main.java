@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon.level1.no2557;
 
 public class Main {
 
