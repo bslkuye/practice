@@ -76,7 +76,6 @@ public class mazeMake {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		
 		while(endCheck == false) {
 			for(int i = 0; i < gridLength; i++) {
 				for(int j = 0; j < gridLength; j++) {
@@ -107,6 +106,7 @@ public class mazeMake {
 		}
 		grid[1][0] = 0;
 		grid[gridLength-2][gridLength-1] = 0;
+		
 		
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
