@@ -11,24 +11,21 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		int n = Integer.parseInt(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		int[] scoreArr = new int[n];
 		int highScore = 0;
 		double aveScore = 0.0;
 		
-		for(int i = 0; i < scoreArr.length; i++) {
+		for(int i = 0; i < n; i++) {
 			int score = Integer.parseInt(st.nextToken());
 			scoreArr[i] = score;
-			
 			if(score > highScore) highScore = score;
 		}
 		
-		for(int i = 0; i < scoreArr.length; i++) {
-			if(scoreArr[i] < highScore) scoreArr[i] = scoreArr[i] / highScore * 100;
-			aveScore = aveScore + (double)scoreArr[i];
+		for(int i = 0; i < n; i++) {
+			aveScore = aveScore + (double)scoreArr[i] / highScore * 100;
 		}
-		aveScore += highScore;
 		System.out.println(aveScore / n);
 	}
 
