@@ -17,7 +17,7 @@ public class Main {
 		boolean count = false;
 		for(int i = 0; i < 10; i++) {
 			for(int j = 0; j < 10; j++) {
-				if(numArr[i] == numArr[j] && i != j) count = true;
+				if(numArr[i] == numArr[j] && i < j) count = true;
 			}
 			if(count == true) {
 				count = false;
