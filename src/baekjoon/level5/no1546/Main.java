@@ -27,6 +27,7 @@ public class Main {
 			aveScore = aveScore + (double)scoreArr[i] / highScore * 100;
 		}
 		System.out.println(aveScore / n);
+		br.close();
 	}
 
 }
