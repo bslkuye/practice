@@ -24,6 +24,7 @@ public class Main {
 			}else difCount++;
 		}
 		System.out.println(difCount);
+		br.close();
 	}
 
 }
