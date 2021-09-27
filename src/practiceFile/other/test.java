@@ -75,8 +75,6 @@ public class test {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		
 		while(endCheck == false) {
 			for(int i = 0; i < gridLength; i++) {
@@ -103,14 +101,12 @@ public class test {
 						roadMake(i,j);
 					}
 				}
-			}
-			
+			}	
 		}
-//		grid[x][y] = 0;
+		
 		
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
-//				System.out.print(grid[i][j]+1);
 				if(grid[i][j] == 1 ) {//가능한길
 					System.out.print("□ ");
 				}
@@ -122,7 +118,7 @@ public class test {
 				}
 			}
 			System.out.println("");
-		}
+		} //print
 	}
 
 }
