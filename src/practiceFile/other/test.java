@@ -5,6 +5,7 @@ import java.util.Random;
 public class test {
 	static int gridLength = 100;
 	static int[][] grid = new int[gridLength][gridLength];
+	static int[][] finder = new int[gridLength][gridLength];
 	static boolean endCheck = false;
 
 	public static void roadMake(int x, int y) {
@@ -74,6 +75,46 @@ public class test {
 		}
 	}
 	
+	public static void roadFind() {
+		for(int i = 0; i < gridLength; i++) {
+			for(int j = 0; j < gridLength ; j ++) {
+				if(grid[i][j] == 2) {
+					finder[i][j] = 0;
+				}else {
+					finder[i][j] = 1;
+				}
+			}
+		}
+		
+		finder[1][1] = 2;
+		while(finder[gridLength - 2][gridLength - 2] == 1) {
+			for(int i = 0; i < gridLength; i++) {
+				for(int j = 0; j < gridLength ; j ++) {
+					if(grid[i][j] == 1) {
+						if(grid[i - 1][j] > 1) {
+							grid[i][j] = grid[i - 1][j] +1;
+						}else if(grid[i + 1][j] > 1) {
+							grid[i][j] = grid[i + 1][j] +1;
+						}else if(grid[i][j - 1] > 1) {
+							grid[i][j] = grid[i][j - 1] +1;
+						}else if(grid[i][j + 1] > 1) {
+							grid[i][j] = grid[i][j + 1] +1;
+						}
+					}
+				}
+			}
+		}
+		
+		for(int i = 0; i < gridLength; i++) {
+			for(int j = 0; j < gridLength ; j ++) {
+				if(finder[i][j] != 0) {
+					grid[i][j] = finder[i][j];
+				}
+			}
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		
 		while(endCheck == false) {
@@ -103,6 +144,7 @@ public class test {
 				}
 			}	
 		}
+		roadFind();
 		
 		
 		for(int i = 0; i < gridLength; i++) {
@@ -114,6 +156,7 @@ public class test {
 					System.out.print("бс ");
 				}
 				if(grid[i][j] <= 0){//▒ц
+					
 					System.out.print("  ");
 				}
 			}
