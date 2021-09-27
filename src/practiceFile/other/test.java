@@ -3,11 +3,39 @@ package practiceFile.other;
 import java.util.Random;
 
 public class test {
-	static int gridLength = 100;
+	static int gridLength = 50;
 	static int[][] grid = new int[gridLength][gridLength];
 	static int[][] finder = new int[gridLength][gridLength];
 	static boolean endCheck = false;
-
+	
+	public static void roadPrint() {
+		
+		for(int i = 0; i < gridLength; i++) {
+			for(int j = 0; j < gridLength; j++) {
+				if(grid[i][j] == 1 ) {//가능한길
+					System.out.print("□ ");
+				}
+				if(grid[i][j] == 2){//벽
+					System.out.print("■ ");
+				}
+				if(grid[i][j] > 2){//길
+					if(grid[i][j] < 20) {
+						System.out.print("1 ");
+					}else if(grid[i][j] < 40) {
+						System.out.print("2 ");
+					}else if(grid[i][j] < 80) {
+						System.out.print("3 ");
+					}else if(grid[i][j] < 160) {
+						System.out.print("4 ");
+					}else {
+						System.out.print("5 ");
+					}
+				}
+			}
+			System.out.println("");
+		}
+	}
+	
 	public static void roadMake(int x, int y) {
 		Random random = new Random();
 		random.setSeed(System.currentTimeMillis());
@@ -99,7 +127,7 @@ public class test {
 			}
 		}
 		
-		finder[1][1] = 2;
+		finder[1][1] = 3;
 		while(finder[gridLength - 2][gridLength - 2] == 1) {
 			for(int i = 0; i < gridLength; i++) {
 				for(int j = 0; j < gridLength ; j ++) {
@@ -116,6 +144,7 @@ public class test {
 					}
 				}
 			}
+			roadPrint();
 		}
 		
 		for(int i = 0; i < gridLength; i++) {
@@ -159,22 +188,32 @@ public class test {
 		}
 		roadFind();
 		
+		roadPrint();
 		
-		for(int i = 0; i < gridLength; i++) {
-			for(int j = 0; j < gridLength; j++) {
-				if(grid[i][j] == 1 ) {//가능한길
-					System.out.print("□ ");
-				}
-				if(grid[i][j] == 2){//벽
-					System.out.print("■ ");
-				}
-				if(grid[i][j] == 0){//길
-					
-					System.out.print("  ");
-				}
-			}
-			System.out.println("");
-		} //print
+//		for(int i = 0; i < gridLength; i++) {
+//			for(int j = 0; j < gridLength; j++) {
+//				if(grid[i][j] == 1 ) {//가능한길
+//					System.out.print("□ ");
+//				}
+//				if(grid[i][j] == 2){//벽
+//					System.out.print("■ ");
+//				}
+//				if(grid[i][j] > 2){//길
+//					if(grid[i][j] < 20) {
+//						System.out.print("1 ");
+//					}else if(grid[i][j] < 40) {
+//						System.out.print("2 ");
+//					}else if(grid[i][j] < 80) {
+//						System.out.print("3 ");
+//					}else if(grid[i][j] < 160) {
+//						System.out.print("4 ");
+//					}else {
+//						System.out.print("5 ");
+//					}
+//				}
+//			}
+//			System.out.println("");
+//		} //print
 	}
 
 }
