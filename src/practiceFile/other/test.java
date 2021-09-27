@@ -5,6 +5,7 @@ import java.util.Random;
 public class test {
 	static int gridLength = 100;
 	static int[][] grid = new int[gridLength][gridLength];
+	static int[][] finder = new int[gridLength][gridLength];
 	static boolean endCheck = false;
 
 	public static void roadMake(int x, int y) {
@@ -72,11 +73,62 @@ public class test {
 				break;
 			}
 		}
+		for(int i = 0; i < gridLength; i++) {
+			for(int j = 0; j < gridLength; j++) {
+				if(grid[i][j] == 1 ) {//가능한길
+					grid[i][j] = 1;
+				}
+				if(grid[i][j] >= 2){//벽
+					grid[i][j] = 2;
+				}
+				if(grid[i][j] <= 0){//길
+					grid[i][j] = 0;
+				}
+			}
+		}
+	}
+	
+	public static void roadFind() {
+		for(int i = 0; i < gridLength; i++) {
+			for(int j = 0; j < gridLength ; j ++) {
+				if(grid[i][j] == 2) {
+					finder[i][j] = 0;
+				}else {
+					finder[i][j] = 1;
+				}
+			}
+		}
+		
+		finder[1][1] = 2;
+		while(finder[gridLength - 2][gridLength - 2] == 1) {
+			for(int i = 0; i < gridLength; i++) {
+				for(int j = 0; j < gridLength ; j ++) {
+					if(grid[i][j] == 1) {
+						if(grid[i - 1][j] > 1) {
+							grid[i][j] = grid[i - 1][j] +1;
+						}else if(grid[i + 1][j] > 1) {
+							grid[i][j] = grid[i + 1][j] +1;
+						}else if(grid[i][j - 1] > 1) {
+							grid[i][j] = grid[i][j - 1] +1;
+						}else if(grid[i][j + 1] > 1) {
+							grid[i][j] = grid[i][j + 1] +1;
+						}
+					}
+				}
+			}
+		}
+		
+		for(int i = 0; i < gridLength; i++) {
+			for(int j = 0; j < gridLength ; j ++) {
+				if(finder[i][j] != 0) {
+					grid[i][j] = finder[i][j];
+				}
+			}
+		}
+		
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		
 		while(endCheck == false) {
 			for(int i = 0; i < gridLength; i++) {
@@ -103,26 +155,26 @@ public class test {
 						roadMake(i,j);
 					}
 				}
-			}
-			
+			}	
 		}
-//		grid[x][y] = 0;
+		roadFind();
+		
 		
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
-//				System.out.print(grid[i][j]+1);
 				if(grid[i][j] == 1 ) {//가능한길
 					System.out.print("□ ");
 				}
-				if(grid[i][j] >= 2){//벽
+				if(grid[i][j] == 2){//벽
 					System.out.print("■ ");
 				}
-				if(grid[i][j] <= 0){//길
+				if(grid[i][j] == 0){//길
+					
 					System.out.print("  ");
 				}
 			}
 			System.out.println("");
-		}
+		} //print
 	}
 
 }
