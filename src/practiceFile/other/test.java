@@ -73,6 +73,19 @@ public class test {
 				break;
 			}
 		}
+		for(int i = 0; i < gridLength; i++) {
+			for(int j = 0; j < gridLength; j++) {
+				if(grid[i][j] == 1 ) {//가능한길
+					grid[i][j] = 1;
+				}
+				if(grid[i][j] >= 2){//벽
+					grid[i][j] = 2;
+				}
+				if(grid[i][j] <= 0){//길
+					grid[i][j] = 0;
+				}
+			}
+		}
 	}
 	
 	public static void roadFind() {
@@ -152,10 +165,10 @@ public class test {
 				if(grid[i][j] == 1 ) {//가능한길
 					System.out.print("□ ");
 				}
-				if(grid[i][j] >= 2){//벽
+				if(grid[i][j] == 2){//벽
 					System.out.print("■ ");
 				}
-				if(grid[i][j] <= 0){//길
+				if(grid[i][j] == 0){//길
 					
 					System.out.print("  ");
 				}
