@@ -3,7 +3,7 @@ package practiceFile.other;
 import java.util.Random;
 
 public class test {
-	static int gridLength = 50;
+	static int gridLength = 100;
 	static int[][] grid = new int[gridLength][gridLength];
 	static int[][] finder = new int[gridLength][gridLength];
 	static boolean endCheck = false;
@@ -14,11 +14,9 @@ public class test {
 			for(int j = 0; j < gridLength; j++) {
 				if(grid[i][j] == 1 ) {//가능한길
 					System.out.print("□ ");
-				}
-				if(grid[i][j] == 2){//벽
+				}else if(grid[i][j] == 2){//벽
 					System.out.print("■ ");
-				}
-				if(grid[i][j] > 2){//길
+				}else if(grid[i][j] > 2){//길
 					if(grid[i][j] < 20) {
 						System.out.print("1 ");
 					}else if(grid[i][j] < 40) {
@@ -30,7 +28,38 @@ public class test {
 					}else {
 						System.out.print("5 ");
 					}
+				}else if(grid[i][j] == 0) {
+					System.out.print("- ");
 				}
+			}
+			System.out.println("");
+
+		}
+	}
+	
+public static void roadFindPrint() {
+		
+		for(int i = 0; i < gridLength; i++) {
+			for(int j = 0; j < gridLength; j++) {
+				if(finder[i][j] == 1 ) {//가능한길
+					System.out.print("□ ");
+				}else if(finder[i][j] == 0){//벽
+					System.out.print("■ ");
+				}else if(finder[i][j] > 2){//길
+					if(finder[i][j] < 20) {
+						System.out.print("1 ");
+					}else if(finder[i][j] < 40) {
+						System.out.print("2 ");
+					}else if(finder[i][j] < 80) {
+						System.out.print("3 ");
+					}else if(finder[i][j] < 160) {
+						System.out.print("4 ");
+					}else {
+						System.out.print("5 ");
+					}
+				}else 
+					System.out.print("- ");
+				
 			}
 			System.out.println("");
 		}
@@ -128,33 +157,25 @@ public class test {
 		}
 		
 		finder[1][1] = 3;
-		while(finder[gridLength - 2][gridLength - 2] == 1) {
+		int count = 0;
+		while(count < 2500) {
 			for(int i = 0; i < gridLength; i++) {
-				for(int j = 0; j < gridLength ; j ++) {
-					if(grid[i][j] == 1) {
-						if(grid[i - 1][j] > 1) {
-							grid[i][j] = grid[i - 1][j] +1;
-						}else if(grid[i + 1][j] > 1) {
-							grid[i][j] = grid[i + 1][j] +1;
-						}else if(grid[i][j - 1] > 1) {
-							grid[i][j] = grid[i][j - 1] +1;
-						}else if(grid[i][j + 1] > 1) {
-							grid[i][j] = grid[i][j + 1] +1;
+				for(int j = 0; j < gridLength; j ++) {
+					count ++;
+					if(finder[i][j] == 1) {
+						if(finder[i - 1][j] > 1) {
+							finder[i - 1][j] = finder[i][j] + 1;
+						}else if(grid[i - 1][j] > 1) {
+							finder[i + 1][j] = finder[i][j] + 1;
+						}else if(grid[i - 1][j] > 1) {
+							finder[i][j - 1] = finder[i][j] + 1;
+						}else if(grid[i - 1][j] > 1) {
+							finder[i][j + 1] = finder[i][j] + 1;
 						}
 					}
 				}
 			}
-			roadPrint();
 		}
-		
-		for(int i = 0; i < gridLength; i++) {
-			for(int j = 0; j < gridLength ; j ++) {
-				if(finder[i][j] != 0) {
-					grid[i][j] = finder[i][j];
-				}
-			}
-		}
-		
 	}
 	
 	public static void main(String[] args) {
@@ -187,9 +208,8 @@ public class test {
 			}	
 		}
 		roadFind();
-		
+		roadFindPrint();
 		roadPrint();
-		
 //		for(int i = 0; i < gridLength; i++) {
 //			for(int j = 0; j < gridLength; j++) {
 //				if(grid[i][j] == 1 ) {//가능한길
