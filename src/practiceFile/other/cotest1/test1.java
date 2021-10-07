@@ -31,10 +31,10 @@ public class test1 {
 		}
 		int[] a = new int[(int)N];
 		for(int i = 0; i < (int)N; i++) a[i] = i;
-		
+
 		for(int i = 0; i < k; i++) {
 			for(int j = 0; j < k; j++) {
-				
+
 			}
 		}
 		
