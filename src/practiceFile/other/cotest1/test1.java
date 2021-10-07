@@ -13,14 +13,30 @@ public class test1 {
 		StringTokenizer st = new StringTokenizer(br.readLine(), "[],");
 		
 		System.out.println(st.countTokens());
-		
+		double N = Math.sqrt(st.countTokens());
+//		System.out.println((int)N);
 //		while(st.countTokens() != 0) {
 //			System.out.print(st.nextToken());
 //		}
 //		System.out.println();
-		
+		int maxHeat = 0;
+		int nowHeat = 0;
+		int[][] office = new int[(int)N][(int)N];
 		BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
-		int k = Integer.parseInt(br1.readLine());
+		int k = Integer.parseInt(br1.readLine()); // ¿ÂÇ³±â Å©±â
+		for(int i = 0; i < (int)N; i++) {
+			for(int j = 0; j < (int)N; j++) {
+				office[i][j] = Integer.parseInt(st.nextToken());
+			}
+		}
+//		int[] a = new int[(int)N];
+//		for(int i = 0; i < (int)N; i++) a[i] = i;
+		
+		for(int i = 0; i < k; i++) {
+			for(int j = 0; j < k; j++) {
+				
+			}
+		}
 		
 	}
 
