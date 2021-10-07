@@ -13,7 +13,8 @@ public class test1 {
 		StringTokenizer st = new StringTokenizer(br.readLine(), "[],");
 		
 		System.out.println(st.countTokens());
-		
+		double N = Math.sqrt(st.countTokens());
+
 //		while(st.countTokens() != 0) {
 //			System.out.print(st.nextToken());
 //		}
@@ -21,7 +22,6 @@ public class test1 {
 		
 		BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
 		int k = Integer.parseInt(br1.readLine());
-		
 	}
 
 }
