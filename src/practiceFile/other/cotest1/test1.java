@@ -14,11 +14,6 @@ public class test1 {
 		
 		System.out.println(st.countTokens());
 		double N = Math.sqrt(st.countTokens());
-//		System.out.println((int)N);
-//		while(st.countTokens() != 0) {
-//			System.out.print(st.nextToken());
-//		}
-//		System.out.println();
 		int maxHeat = 0;
 		int nowHeat = 0;
 		int[][] office = new int[(int)N][(int)N];
