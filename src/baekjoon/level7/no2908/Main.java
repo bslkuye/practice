@@ -13,13 +13,15 @@ public class Main {
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		StringBuilder sb = new StringBuilder();
 		String firstNum = st.nextToken();
-		String secondNum = st.nextToken();
+//		String secondNum = st.nextToken();
 		String changeNum = "";
-		for(int i = 0; i < firstNum.length(); i ++) {
-			int length = firstNum.length();
-			changeNum += firstNum;
-		}
-		
+		int firstLength = firstNum.length();
+//
+//		for(int i = 0; i < firstNum.length(); i++) {
+//			changeNum += firstNum(firstLength-i);
+//		}
+//		System.out.println(changeNum.subSequence(s, firstLength));
+//		System.out.println(firstNum);
 //		for(int i=0;i<s;i++) {
 //			int len = Integer.parseInt(st.nextToken());
 //			String str = st.nextToken();
