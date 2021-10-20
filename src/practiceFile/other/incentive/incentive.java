@@ -18,7 +18,7 @@ public class incentive {
 		double incenPer = funds * 0.4 / (lv10 * 10 + lv5 * 5 + otherPerson);
 		System.out.println(person + " " + funds + " " + lv10 + " " + lv5);
 		System.out.println("10´Ü = " + 10 * incenPer+"¾ï");
-		
+		//1
 		br.close();
 	}
 
