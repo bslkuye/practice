@@ -29,7 +29,7 @@ public class test1 {
 		
 		for(int i = 0; a[i] < k; i++) {
 			for(int j = 0; a[j] < k; j++) {
-				
+				//1
 			}
 		}
 		
