@@ -3,7 +3,7 @@ package practiceFile.other;
 import java.util.Random;
 
 public class mazeMake {
-	static int gridLength = 100;
+	static int gridLength = 50;
 	static int[][] grid = new int[gridLength][gridLength];
 	static boolean endCheck = false;
 
@@ -63,7 +63,6 @@ public class mazeMake {
 				}
 			}
 			if(x == gridLength - 2 && y == gridLength - 2) {
-				System.out.println("end!");
 				if(grid[gridLength-2][gridLength-3] == 1)
 					grid[gridLength-2][gridLength-3] = 2;
 				if(grid[gridLength-3][gridLength-2] == 1)
@@ -76,7 +75,6 @@ public class mazeMake {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		
 		while(endCheck == false) {
 			for(int i = 0; i < gridLength; i++) {
@@ -106,7 +104,9 @@ public class mazeMake {
 			}
 			
 		}
-//		grid[x][y] = 0;
+		grid[1][0] = 0;
+		grid[gridLength-2][gridLength-1] = 0;
+		
 		
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
