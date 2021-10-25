@@ -9,7 +9,7 @@ public class test {
 	static boolean endCheck = false;
 	
 	public static void roadPrint() {
-		
+		System.out.println("rPrint");
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
 				if(grid[i][j] == 1 ) {//가능한길
@@ -37,8 +37,8 @@ public class test {
 		}
 	}
 	
-public static void roadFindPrint() {
-		
+	public static void roadFindPrint() {
+		System.out.println("rFindPrint");
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
 				if(finder[i][j] == 1 ) {//가능한길
@@ -57,8 +57,7 @@ public static void roadFindPrint() {
 					}else {
 						System.out.print("5 ");
 					}
-				}else 
-					System.out.print("- ");
+				}else System.out.print("- ");
 				
 			}
 			System.out.println("");
@@ -66,6 +65,7 @@ public static void roadFindPrint() {
 	}
 	
 	public static void roadMake(int x, int y) {
+		System.out.println("rMaker");
 		Random random = new Random();
 		random.setSeed(System.currentTimeMillis());
 		
@@ -143,26 +143,30 @@ public static void roadFindPrint() {
 				}
 			}
 		}
+		grid[1][1] = 0;
 	}
 	
 	public static void roadFind() {
+		System.out.println("rFind");
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength ; j ++) {
 				if(grid[i][j] == 2) {
-					finder[i][j] = 0;
+					finder[i][j] = 0;//벽 0
 				}else {
-					finder[i][j] = 1;
+					finder[i][j] = 1;//길 1
 				}
 			}
 		}
 		
 		finder[1][1] = 3;
-		int count = 0;
-		while(count < 2500) {
+		int done = 0;
+		while(done < 10000) {
 			for(int i = 0; i < gridLength; i++) {
-				for(int j = 0; j < gridLength; j ++) {
-					count ++;
+				for(int j = 0; j < gridLength; j++) {
+					done++;
+					System.out.println(done);
 					if(finder[i][j] == 1) {
+//						done = 0;
 						if(finder[i - 1][j] > 1) {
 							finder[i - 1][j] = finder[i][j] + 1;
 						}else if(grid[i - 1][j] > 1) {
@@ -210,30 +214,19 @@ public static void roadFindPrint() {
 		roadFind();
 		roadFindPrint();
 		roadPrint();
-		for(int i = 0; i < gridLength; i++) {
-			for(int j = 0; j < gridLength; j++) {
-				if(grid[i][j] == 1 ) {//가능한길
-					System.out.print("□ ");
-				}
-				if(grid[i][j] == 2){//벽
-					System.out.print("■ ");
-				}
-				if(grid[i][j] > 2){//길
-					if(grid[i][j] < 20) {
-						System.out.print("1 ");
-					}else if(grid[i][j] < 40) {
-						System.out.print("2 ");
-					}else if(grid[i][j] < 80) {
-						System.out.print("3 ");
-					}else if(grid[i][j] < 160) {
-						System.out.print("4 ");
-					}else {
-						System.out.print("5 ");
-					}
-				}else if(true)System.out.print("6 ");
-			}
-			System.out.println("");
-		} //print
 	}
 
 }
+
+//road maker 로 벽2 길0 외1
+//
+//finder에서 처음 시작지점 길에 1값 부여
+//인접한 길에 ++1 반복문으로 값이 없는값 찾고 근처에 값이 있으면 그 값의 ++1
+
+
+
+
+
+
+
+
