@@ -3,7 +3,7 @@ package practiceFile.other;
 import java.util.Random;
 
 public class test {
-	static int gridLength = 10;
+	static int gridLength = 20;
 	static int[][] grid = new int[gridLength][gridLength];
 	static int[][] finder = new int[gridLength][gridLength];
 	static boolean endCheck = false;
@@ -16,20 +16,8 @@ public class test {
 					System.out.print("□ ");
 				}else if(grid[i][j] == 2){//벽
 					System.out.print("■ ");
-				}else if(grid[i][j] > 2){//길
-					if(grid[i][j] < 20) {
-						System.out.print("1 ");
-					}else if(grid[i][j] < 40) {
-						System.out.print("2 ");
-					}else if(grid[i][j] < 80) {
-						System.out.print("3 ");
-					}else if(grid[i][j] < 160) {
-						System.out.print("4 ");
-					}else {
-						System.out.print("5 ");
-					}
 				}else if(grid[i][j] == 0) {
-					System.out.print("- ");
+					System.out.print("  ");
 				}
 			}
 			System.out.println("");
@@ -46,17 +34,7 @@ public class test {
 				}else if(finder[i][j] == 0){//벽
 					System.out.print("■ ");
 				}else if(finder[i][j] > 2){//길
-					if(finder[i][j] < 20) {
-						System.out.print("1 ");
-					}else if(finder[i][j] < 40) {
-						System.out.print("2 ");
-					}else if(finder[i][j] < 80) {
-						System.out.print("3 ");
-					}else if(finder[i][j] < 160) {
-						System.out.print("4 ");
-					}else {
-						System.out.print("5 ");
-					}
+					System.out.print(finder[i][j] % 10 + " ");
 				}else System.out.print("- ");
 				
 			}
@@ -160,21 +138,22 @@ public class test {
 		
 		finder[1][1] = 3;
 		int done = 0;
+		int stack = 0;
 		while(done < 10000) {
 			for(int i = 0; i < gridLength; i++) {
 				for(int j = 0; j < gridLength; j++) {
 					done++;
+					stack++;
 					System.out.println(done);
-					if(finder[i][j] == 1) {
-//						done = 0;
-						if(finder[i - 1][j] > 1) {
-							finder[i - 1][j] = finder[i][j] + 1;
-						}else if(grid[i - 1][j] > 1) {
-							finder[i + 1][j] = finder[i][j] + 1;
-						}else if(grid[i - 1][j] > 1) {
-							finder[i][j - 1] = finder[i][j] + 1;
-						}else if(grid[i - 1][j] > 1) {
-							finder[i][j + 1] = finder[i][j] + 1;
+					if(finder[i][j] == stack) {
+						if(finder[i - 1][j] == 1) {
+							finder[i - 1][j] = stack + 1;
+						}else if(grid[i - 1][j] == 1) {
+							finder[i + 1][j] = stack + 1;
+						}else if(grid[i - 1][j] == 1) {
+							finder[i][j - 1] = stack + 1;
+						}else if(grid[i - 1][j] == 1) {
+							finder[i][j + 1] = stack + 1;
 						}
 					}
 				}
@@ -200,7 +179,7 @@ public class test {
 				}
 			}
 			
-			grid[1][1] = 0; //길 시작점
+			grid[1][1] = 1; //길 시작점
 			grid[2][1] = 1;
 			grid[1][2] = 1;
 			for(int i = 0; i < gridLength; i++) {
@@ -213,7 +192,8 @@ public class test {
 		}
 		roadFind();
 		roadFindPrint();
-		roadPrint();
+//		roadPrint();
+		System.out.println(finder[1][1] + " " + finder[1][2] + " " + finder[2][1]);
 	}
 
 }
