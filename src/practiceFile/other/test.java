@@ -188,7 +188,7 @@ public class test {
 						roadMake(i,j);
 					}
 				}
-			}	
+			}
 		}
 		roadFind();
 		roadFindPrint();
