@@ -138,23 +138,17 @@ public class test {
 		
 		finder[1][1] = 3;
 		int done = 0;
-		int stack = 0;
+		int stack = 1;
 		while(done < 10000) {
-			for(int i = 0; i < gridLength; i++) {
-				for(int j = 0; j < gridLength; j++) {
-					done++;
-					stack++;
-					System.out.println(done);
+			done++;
+			stack++;
+			for(int i = 1; i < gridLength-1; i++) {
+				for(int j = 1; j < gridLength-1; j++) {
 					if(finder[i][j] == stack) {
-						if(finder[i - 1][j] == 1) {
-							finder[i - 1][j] = stack + 1;
-						}else if(grid[i - 1][j] == 1) {
-							finder[i + 1][j] = stack + 1;
-						}else if(grid[i - 1][j] == 1) {
-							finder[i][j - 1] = stack + 1;
-						}else if(grid[i - 1][j] == 1) {
-							finder[i][j + 1] = stack + 1;
-						}
+						if(finder[i - 1][j] == 1) finder[i - 1][j] = stack + 1;
+						if(finder[i + 1][j] == 1) finder[i + 1][j] = stack + 1;
+						if(finder[i][j - 1] == 1) finder[i][j - 1] = stack + 1;
+						if(finder[i][j + 1] == 1) finder[i][j + 1] = stack + 1;
 					}
 				}
 			}
