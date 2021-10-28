@@ -34,8 +34,8 @@ public class test {
 				}else if(finder[i][j] == 0){//º®
 					System.out.print("¡á ");
 				}else if(finder[i][j] > 2){//±æ
-					System.out.print(finder[i][j] % 10 + " ");
-				}else System.out.print("- ");
+					System.out.print((finder[i][j] - 2) % 10 + " ");
+				}else System.out.print("  ");
 				
 			}
 			System.out.println("");
@@ -138,27 +138,44 @@ public class test {
 		
 		finder[1][1] = 3;
 		int done = 0;
-		int stack = 0;
-		while(done < 10000) {
-			for(int i = 0; i < gridLength; i++) {
-				for(int j = 0; j < gridLength; j++) {
-					done++;
-					stack++;
-					System.out.println(done);
+		int stack = 1;
+		while(finder[gridLength - 1][gridLength - 1] != 1) {
+			done++;
+			stack++;
+			for(int i = 1; i < gridLength-1; i++) {
+				for(int j = 1; j < gridLength-1; j++) {
 					if(finder[i][j] == stack) {
-						if(finder[i - 1][j] == 1) {
-							finder[i - 1][j] = stack + 1;
-						}else if(grid[i - 1][j] == 1) {
-							finder[i + 1][j] = stack + 1;
-						}else if(grid[i - 1][j] == 1) {
-							finder[i][j - 1] = stack + 1;
-						}else if(grid[i - 1][j] == 1) {
-							finder[i][j + 1] = stack + 1;
-						}
+						if(finder[i - 1][j] == 1) finder[i - 1][j] = stack + 1;
+						if(finder[i + 1][j] == 1) finder[i + 1][j] = stack + 1;
+						if(finder[i][j - 1] == 1) finder[i][j - 1] = stack + 1;
+						if(finder[i][j + 1] == 1) finder[i][j + 1] = stack + 1;
 					}
 				}
 			}
 		}
+//		int a = gridLength - 1;
+//		int b = gridLength - 1;
+//		int astack = stack;
+//		for(int i = 0; i < astack; i++) {
+//			finder[a][b] = - 1;
+//			if(finder[a - 1][b] == stack) {
+//				finder[a - 1][b] = -1;
+//				a--;
+//			}
+//			if(finder[a + 1][b] == stack) {
+//				finder[a + 1][b] = -1;
+//				a++;
+//			}
+//			if(finder[a][b - 1] == stack) {
+//				finder[a][b - 1] = -1;
+//				b--;
+//			}
+//			if(finder[a][b + 1] == stack) {
+//				finder[a][b + 1] = -1;
+//				b++;
+//			}
+//		}
+		
 	}
 	
 	public static void main(String[] args) {
@@ -193,7 +210,7 @@ public class test {
 		roadFind();
 		roadFindPrint();
 //		roadPrint();
-		System.out.println(finder[1][1] + " " + finder[1][2] + " " + finder[2][1]);
+//		System.out.println(finder[1][1] + " " + finder[1][2] + " " + finder[2][1]);
 	}
 
 }
