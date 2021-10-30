@@ -141,7 +141,7 @@ public class test {
 		finder[1][1] = 3;
 		int stack = 1;			
 		while(finder[gridLength-2][gridLength-2] == 1 && stack < 1000) {
-			if(stack == 999) System.out.println("stack999" + stack);
+			if(stack == 999) System.out.println("stack999");
 			stack++;
 			for(int i = 1; i < gridLength-1; i++) {
 				for(int j = 1; j < gridLength-1; j++) {
@@ -204,17 +204,10 @@ public class test {
 		}
 		roadFind();
 		roadFindPrint();
-//		roadPrint();
-//		System.out.println(finder[1][1] + " " + finder[1][2] + " " + finder[2][1]);
+		roadPrint();
 	}
 
 }
-
-//road maker 로 벽2 길0 외1
-//
-//finder에서 처음 시작지점 길에 1값 부여
-//인접한 길에 ++1 반복문으로 값이 없는값 찾고 근처에 값이 있으면 그 값의 ++1
-
 
 
 
