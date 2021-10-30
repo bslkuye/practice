@@ -3,7 +3,7 @@ package practiceFile.other;
 import java.util.Random;
 
 public class test {
-	static int gridLength = 20;
+	static int gridLength = 50;
 	static int[][] grid = new int[gridLength][gridLength];
 	static int[][] finder = new int[gridLength][gridLength];
 	static boolean endCheck = false;
@@ -30,12 +30,13 @@ public class test {
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
 				if(finder[i][j] == 1 ) {//가능한길
-					System.out.print("□ ");
+					System.out.print("  ");
 				}else if(finder[i][j] == 0){//벽
 					System.out.print("■ ");
 				}else if(finder[i][j] > 2){//길
-					System.out.print((finder[i][j] - 2) % 10 + " ");
-				}else System.out.print("  ");
+//					System.out.print((finder[i][j] - 2) % 10 + " ");
+					System.out.print("  ");
+				}else System.out.print("o ");
 				
 			}
 			System.out.println("");
@@ -125,7 +126,7 @@ public class test {
 	}
 	
 	public static void roadFind() {
-		System.out.println("rFind");
+		System.out.println("rFind1");
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength ; j ++) {
 				if(grid[i][j] == 2) {
@@ -135,9 +136,12 @@ public class test {
 				}
 			}
 		}
+		System.out.println("rFind2");
+
 		finder[1][1] = 3;
 		int stack = 1;			
-		while(finder[gridLength-2][gridLength-2] == 1) {
+		while(finder[gridLength-2][gridLength-2] == 1 && stack < 1000) {
+			if(stack == 999) System.out.println("stack999" + stack);
 			stack++;
 			for(int i = 1; i < gridLength-1; i++) {
 				for(int j = 1; j < gridLength-1; j++) {
@@ -150,28 +154,22 @@ public class test {
 				}
 			}
 		}
-//		int a = gridLength - 1;
-//		int b = gridLength - 1;
-//		int astack = stack;
-//		for(int i = 0; i < astack; i++) {
-//			finder[a][b] = - 1;
-//			if(finder[a - 1][b] == stack) {
-//				finder[a - 1][b] = -1;
-//				a--;
-//			}
-//			if(finder[a + 1][b] == stack) {
-//				finder[a + 1][b] = -1;
-//				a++;
-//			}
-//			if(finder[a][b - 1] == stack) {
-//				finder[a][b - 1] = -1;
-//				b--;
-//			}
-//			if(finder[a][b + 1] == stack) {
-//				finder[a][b + 1] = -1;
-//				b++;
-//			}
-//		}
+		System.out.println("rFind3" + stack);
+
+		int a = gridLength - 2;
+		int b = gridLength - 2;
+		int astack = stack;
+		while(astack > 1) {
+			finder[a][b] = -1;
+			if(finder[a - 1][b] == astack) {
+				a--;
+			}else if(finder[a + 1][b] == astack) {
+				a++;
+			}else if(finder[a][b - 1] == astack) {
+				b--;
+			}else if(finder[a][b + 1] == astack) b++;			
+			astack--;
+		}
 		
 	}
 	
