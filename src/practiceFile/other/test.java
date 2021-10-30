@@ -135,12 +135,9 @@ public class test {
 				}
 			}
 		}
-		
 		finder[1][1] = 3;
-		int done = 0;
-		int stack = 1;
-		while(finder[gridLength - 1][gridLength - 1] != 1) {
-			done++;
+		int stack = 1;			
+		while(finder[gridLength-2][gridLength-2] == 1) {
 			stack++;
 			for(int i = 1; i < gridLength-1; i++) {
 				for(int j = 1; j < gridLength-1; j++) {
