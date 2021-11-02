@@ -34,7 +34,6 @@ public class mazeMake {
 				}else if(finder[i][j] == 0){//º®
 					System.out.print("¡á ");
 				}else if(finder[i][j] > 2){//±æ
-//					System.out.print((finder[i][j] - 2) % 10 + " ");
 					System.out.print("  ");
 				}else System.out.print("o ");
 				
@@ -57,7 +56,6 @@ public class mazeMake {
 					grid[x][y] = -1;
 					grid[x+1][y]++;
 					grid[x-1][y]++;
-//					grid[x][y-1]++;
 					grid[x][y+1]++;
 				}else if (grid[x][y+1]<=0) {
 					y++;
@@ -70,7 +68,6 @@ public class mazeMake {
 					grid[x+1][y]++;
 					grid[x-1][y]++;
 					grid[x][y-1]++;
-//					grid[x][y+1]++;
 				}else if (grid[x][y-1]<=0) {
 					y--;
 				}
@@ -79,7 +76,6 @@ public class mazeMake {
 				if(grid[x-1][y]==1) {
 					x--;
 					grid[x][y] = -1;
-//					grid[x+1][y]++;
 					grid[x-1][y]++;
 					grid[x][y-1]++;
 					grid[x][y+1]++;
@@ -92,7 +88,6 @@ public class mazeMake {
 					x++;
 					grid[x][y] = -1;
 					grid[x+1][y]++;
-//					grid[x-1][y]++;
 					grid[x][y-1]++;
 					grid[x][y+1]++;
 				}else if (grid[x+1][y]<=0) {
@@ -204,7 +199,7 @@ public class mazeMake {
 		}
 		roadFind();
 		roadFindPrint();
-//		roadPrint();
+		roadPrint();
 	}
 
 }
