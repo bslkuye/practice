@@ -3,7 +3,7 @@ package practiceFile.other;
 import java.util.Random;
 
 public class test {
-	static int gridLength = 50;
+	static int gridLength = 49;
 	static int[][] grid = new int[gridLength][gridLength];
 	static int[][] finder = new int[gridLength][gridLength];
 	static boolean endCheck = false;
@@ -122,6 +122,7 @@ public class test {
 				}
 			}
 		}
+		
 		grid[1][1] = 0;
 	}
 	
@@ -173,12 +174,45 @@ public class test {
 		
 	}
 	
+	public static void checkMake() {
+		Random random = new Random();
+		int move = random.nextInt(4);
+		for(int i = 1; i < gridLength; i += 2) {
+			for(int j = 1; j < gridLength; j += 2) {
+				if(grid[i][j] == 2) {
+					if(move == 0 && grid[i-1][j] == 0) {
+						grid[i+1][j] = 2;
+						grid[i][j-1] = 2;
+						grid[i][j+1] = 2;
+						grid[i][j] = 0;
+					} else if(move == 1 && grid[i+1][j] == 0) {
+						grid[i-1][j] = 2;
+						grid[i][j-1] = 2;
+						grid[i][j+1] = 2;
+						grid[i][j] = 0;
+					} else if(move == 2 && grid[i][j-1] == 0) {
+						grid[i-1][j] = 2;
+						grid[i+1][j] = 2;
+						grid[i][j+1] = 2;
+						grid[i][j] = 0;
+					} else if(move == 3 && grid[i][j+1] == 0) {
+						grid[i-1][j] = 2;
+						grid[i+1][j] = 2;
+						grid[i][j-1] = 2;
+						grid[i][j] = 0;
+					}
+				}
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		
 		while(endCheck == false) {
 			for(int i = 0; i < gridLength; i++) {
 				for(int j = 0; j < gridLength; j++) {
 					grid[i][j] = 0; // 0 길 1 길이뻗을수 있음 2 벽
+					if(i % 2 == 0 && j % 2 == 0) grid[i][j] = 2;
 				}
 			} // 격자생성, 초기화
 			
@@ -202,8 +236,18 @@ public class test {
 				}
 			}
 		}
+		for(int i = 1; i < gridLength; i += 2) {
+			for(int j = 1; j < gridLength; j += 2) {
+				if(grid[i][j]==2) {
+					checkMake();
+					i = 1;
+					j = 1;
+				}
+			}
+		}
 		roadFind();
 		roadFindPrint();
+		
 //		roadPrint();
 	}
 
