@@ -17,7 +17,7 @@ public class test {
 				}else if(grid[i][j] == 2){//║о
 					System.out.print("бс ");
 				}else if(grid[i][j] == 0) {
-					System.out.print("  ");
+					System.out.print("  "); 
 				}
 			}
 			System.out.println("");
@@ -147,10 +147,10 @@ public class test {
 			for(int i = 1; i < gridLength-1; i++) {
 				for(int j = 1; j < gridLength-1; j++) {
 					if(finder[i][j] == stack) {
-						if(finder[i - 1][j] == 1) finder[i - 1][j] = stack + 1;
-						if(finder[i + 1][j] == 1) finder[i + 1][j] = stack + 1;
-						if(finder[i][j - 1] == 1) finder[i][j - 1] = stack + 1;
-						if(finder[i][j + 1] == 1) finder[i][j + 1] = stack + 1;
+						if(finder[i - 1][j] < stack) finder[i - 1][j] = stack + 1;
+						if(finder[i + 1][j] < stack) finder[i + 1][j] = stack + 1;
+						if(finder[i][j - 1] < stack) finder[i][j - 1] = stack + 1;
+						if(finder[i][j + 1] < stack) finder[i][j + 1] = stack + 1;
 					}
 				}
 			}
