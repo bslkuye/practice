@@ -147,10 +147,10 @@ public class test {
 			for(int i = 1; i < gridLength-1; i++) {
 				for(int j = 1; j < gridLength-1; j++) {
 					if(finder[i][j] == stack) {
-						if(finder[i - 1][j] < stack) finder[i - 1][j] = stack + 1;
-						if(finder[i + 1][j] < stack) finder[i + 1][j] = stack + 1;
-						if(finder[i][j - 1] < stack) finder[i][j - 1] = stack + 1;
-						if(finder[i][j + 1] < stack) finder[i][j + 1] = stack + 1;
+						if(finder[i - 1][j] < stack && finder[i - 1][j] !=0) finder[i - 1][j] = stack + 1;
+						if(finder[i + 1][j] < stack && finder[i + 1][j] !=0) finder[i + 1][j] = stack + 1;
+						if(finder[i][j - 1] < stack && finder[i][j - 1] !=0) finder[i][j - 1] = stack + 1;
+						if(finder[i][j + 1] < stack && finder[i][j + 1] !=0) finder[i][j + 1] = stack + 1;
 					}
 				}
 			}
