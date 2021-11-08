@@ -12,50 +12,68 @@ public class Main {
 		
 		int result = 0;
 		
-		for(int i=0;i<str.length();i++) {
+		for(int i = 0; i < str.length(); i++) {
 			char ch = str.charAt(i);
+			char nextCh = str.charAt(i+1);
 			if(ch == 'c') {
-				if(i+1 < str.length()) {
-					char nextCh = str.charAt(i+1);
-					if(nextCh == '=' || nextCh == '-') {
-						i++;
-					}
-				}
-			} else if(ch == 'd') {
-				if(i+1 < str.length()) {
-					char nextCh = str.charAt(i+1);
-					if(nextCh == 'z') {
-						if(i+2 < str.length()) {
-							if(str.charAt(i+2) == '=') {
-								i = i+2;
-							}
-						}
-					} else if(nextCh == '-') {
-						i++;
-					}
-				}
-				
-			} else if(ch == 'l' || ch == 'n') {
-				if(i+1 < str.length()) {
-					char nextCh = str.charAt(i+1);
-					if(nextCh == 'j') {
-						i++;
-					}
-				}
-			} else if(ch == 's' || ch == 'z') {
-				if(i+1 < str.length()) {
-					char nextCh = str.charAt(i+1);
-					if(nextCh == '=') {
-						i++;
-					}
+				if(nextCh == '=' || nextCh == '-') {
+					result++;
 				}
 			}
-			result++;
+			if(ch == 'd'){
+				char nnextCh = str.charAt(i+2);
+				if(nextCh == 'z' &&) {
+					
+				}
+			}
 		}
 		
-		System.out.println(result);
-		
-		br.close();
+//		int result = 0;
+//		
+//		for(int i=0;i<str.length();i++) {
+//			char ch = str.charAt(i);
+//			if(ch == 'c') {
+//				if(i+1 < str.length()) {
+//					char nextCh = str.charAt(i+1);
+//					if(nextCh == '=' || nextCh == '-') {
+//						i++;
+//					}
+//				}
+//			} else if(ch == 'd') {
+//				if(i+1 < str.length()) {
+//					char nextCh = str.charAt(i+1);
+//					if(nextCh == 'z') {
+//						if(i+2 < str.length()) {
+//							if(str.charAt(i+2) == '=') {
+//								i = i+2;
+//							}
+//						}
+//					} else if(nextCh == '-') {
+//						i++;
+//					}
+//				}
+//				
+//			} else if(ch == 'l' || ch == 'n') {
+//				if(i+1 < str.length()) {
+//					char nextCh = str.charAt(i+1);
+//					if(nextCh == 'j') {
+//						i++;
+//					}
+//				}
+//			} else if(ch == 's' || ch == 'z') {
+//				if(i+1 < str.length()) {
+//					char nextCh = str.charAt(i+1);
+//					if(nextCh == '=') {
+//						i++;
+//					}
+//				}
+//			}
+//			result++;
+//		}
+//		
+//		System.out.println(result);
+//		
+//		br.close();
 	}
 
 }
