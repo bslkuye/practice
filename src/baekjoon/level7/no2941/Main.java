@@ -14,16 +14,45 @@ public class Main {
 		
 		for(int i = 0; i < str.length(); i++) {
 			char ch = str.charAt(i);
-			char nextCh = str.charAt(i+1);
+			char nextCh = '0';
+			if(i < str.length()-1) {
+				nextCh = str.charAt(i+1);
+			}
+			char nnextCh = '0';
+			if(i < str.length()-2) {
+				nnextCh = str.charAt(i+2);
+			}
+			
 			if(ch == 'c') {
 				if(nextCh == '=' || nextCh == '-') {
-					result++;
+					result+=2;
 				}
 			}
 			if(ch == 'd'){
-				char nnextCh = str.charAt(i+2);
-				if(nextCh == 'z' &&) {
-					
+				if(nextCh == 'z' && nnextCh == '=') {
+					result+=3;
+				}else if(nextCh == '-') {
+					result+=2;
+				}
+			}
+			if(ch == 'l') {
+				if(nextCh == 'j') {
+					result+=2;
+				}
+			}
+			if(ch == 'n') {
+				if(nextCh == 'j') {
+					result+=2;
+				}
+			}
+			if(ch == 's') {
+				if(nextCh == '=') {
+					result+=2;
+				}
+			}
+			if(ch == 'z') {
+				if(nextCh == '=') {
+					result+=2;
 				}
 			}
 		}
@@ -71,9 +100,9 @@ public class Main {
 //			result++;
 //		}
 //		
-//		System.out.println(result);
+		System.out.println(result);
 //		
-//		br.close();
+		br.close();
 	}
 
 }
