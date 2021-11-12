@@ -34,7 +34,6 @@ public class test {
 				}else if(finder[i][j] == 0){//º®
 					System.out.print("¡á ");
 				}else if(finder[i][j] > 2){//±æ
-//					System.out.print((finder[i][j] - 2) % 10 + " ");
 					System.out.print("  ");
 				}else System.out.print("o ");
 				
@@ -142,7 +141,6 @@ public class test {
 		finder[1][1] = 3;
 		int stack = 1;			
 		while(finder[gridLength-2][gridLength-2] == 1 && stack < 1000) {
-			if(stack == 999) System.out.println("stack999");
 			stack++;
 			for(int i = 1; i < gridLength-1; i++) {
 				for(int j = 1; j < gridLength-1; j++) {
