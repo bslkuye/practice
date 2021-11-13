@@ -57,7 +57,7 @@ public class openChat {
 	}
 	
 	public static void main(String[] args) {
-		Solution;
+		solution[];
 	}
 
 }
