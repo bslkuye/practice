@@ -56,7 +56,6 @@ public class test {
 					grid[x][y] = -1;
 					grid[x+1][y]++;
 					grid[x-1][y]++;
-//					grid[x][y-1]++;
 					grid[x][y+1]++;
 				}else if (grid[x][y+1]<=0) {
 					y++;
@@ -69,7 +68,6 @@ public class test {
 					grid[x+1][y]++;
 					grid[x-1][y]++;
 					grid[x][y-1]++;
-//					grid[x][y+1]++;
 				}else if (grid[x][y-1]<=0) {
 					y--;
 				}
@@ -78,7 +76,6 @@ public class test {
 				if(grid[x-1][y]==1) {
 					x--;
 					grid[x][y] = -1;
-//					grid[x+1][y]++;
 					grid[x-1][y]++;
 					grid[x][y-1]++;
 					grid[x][y+1]++;
@@ -91,7 +88,6 @@ public class test {
 					x++;
 					grid[x][y] = -1;
 					grid[x+1][y]++;
-//					grid[x-1][y]++;
 					grid[x][y-1]++;
 					grid[x][y+1]++;
 				}else if (grid[x+1][y]<=0) {
@@ -110,13 +106,13 @@ public class test {
 		}
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
-				if(grid[i][j] == 1 ) {//가능한길
+				if(grid[i][j] == 1 ) {
 					grid[i][j] = 1;
 				}
-				if(grid[i][j] >= 2){//벽
+				if(grid[i][j] >= 2){
 					grid[i][j] = 2;
 				}
-				if(grid[i][j] <= 0){//길
+				if(grid[i][j] <= 0){
 					grid[i][j] = 0;
 				}
 			}
@@ -209,10 +205,10 @@ public class test {
 		while(endCheck == false) {
 			for(int i = 0; i < gridLength; i++) {
 				for(int j = 0; j < gridLength; j++) {
-					grid[i][j] = 0; // 0 길 1 길이뻗을수 있음 2 벽
+					grid[i][j] = 0; 
 					if(i % 2 == 0 && j % 2 == 0) grid[i][j] = 2;
 				}
-			} // 격자생성, 초기화
+			} 
 			
 			for(int i = 0; i < gridLength; i++) {
 				for(int l = 0; l < gridLength; l++) {
@@ -223,7 +219,7 @@ public class test {
 				}
 			}
 			
-			grid[1][1] = 1; //길 시작점
+			grid[1][1] = 1; 
 			grid[2][1] = 1;
 			grid[1][2] = 1;
 			for(int i = 0; i < gridLength; i++) {
@@ -245,8 +241,6 @@ public class test {
 		}
 		roadFind();
 		roadFindPrint();
-		
-//		roadPrint();
 	}
 
 }
