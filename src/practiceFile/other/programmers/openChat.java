@@ -43,21 +43,21 @@ public class openChat {
 					text = st.nextToken();
 					nextText = st.nextToken();
 					map.put(text, nextText);
-			}
+				}
 				for(int k = 0; k < j; k++) {
 					if(k!=0)System.out.print(", ");
 					System.out.print("\"" + map.get(enterExitID[k]));
 					if(enterExit[k] == 0) System.out.print("´ÔÀÌ µé¾î¿Ô½À´Ï´Ù.\"");
 					if(enterExit[k] == 1) System.out.print("´ÔÀÌ ³ª°¬½À´Ï´Ù.\"");					
 				}
-	        
+			}
 	        br.close();
 	        return answer;
 	    }
 	}
 	
 	public static void main(String[] args) {
-		solution[];
+//		solution[];
 	}
 
 }
