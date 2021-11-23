@@ -20,10 +20,12 @@ class failure {
     	int switching = 0;
     	for(int i = 1; i < N; i++) {
     		for(int j = 1; j < N; j++) {
-    			if(tryStage.get(i) < tryStage.get(j + 1) && tryStage.get(j) != tryStage.get(j + 1) && i != j) {
+    			if(tryStage.get(i) < tryStage.get(j) && tryStage.get(j) != tryStage.get(j + 1) && i != j) {
     				switching = j;
-    			}if(tryStage.get(i) == tryStage.get(j + 1) && i != j) {
+    			}else if(tryStage.get(i) == tryStage.get(j) && i > j) {
     				switching = j;
+    			}else if(tryStage.get(i) == tryStage.get(j) && i < j) {
+    				switching = i;
     			}
     		}
     		answer[i] = switching;
