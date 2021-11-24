@@ -22,41 +22,34 @@ public class Main {
 			if(i < str.length()-2) {
 				nnextCh = str.charAt(i+2);
 			}
-			
+			result++;
 			if(ch == 'c') {
-				if(nextCh == '=' || nextCh == '-') {
-					result+=2;
-				}
-			}
-			if(ch == 'd'){
+				if(nextCh == '=' || nextCh == '-')
+					i++;
+			}else if(ch == 'd'){
 				if(nextCh == 'z' && nnextCh == '=') {
-					result+=3;
-				}else if(nextCh == '-') {
-					result+=2;
-				}
-			}
-			if(ch == 'l') {
-				if(nextCh == 'j') {
-					result+=2;
-				}
-			}
-			if(ch == 'n') {
-				if(nextCh == 'j') {
-					result+=2;
-				}
-			}
-			if(ch == 's') {
-				if(nextCh == '=') {
-					result+=2;
-				}
-			}
-			if(ch == 'z') {
-				if(nextCh == '=') {
-					result+=2;
-				}
+					i+=2;
+				}else if(nextCh == '-')
+					i++;
+			}else if(ch == 'l') {
+				if(nextCh == 'j') 
+					i++;
+			}else if(ch == 'n') {
+				if(nextCh == 'j')
+					i++;
+			}else if(ch == 's') {
+				if(nextCh == '=')
+					i++;
+			}else if(ch == 'z') {
+				if(nextCh == '=')
+					i++;
 			}
 		}
-		
+		System.out.println(result);
+		br.close();
+	}
+
+}
 //		int result = 0;
 //		
 //		for(int i=0;i<str.length();i++) {
@@ -100,9 +93,4 @@ public class Main {
 //			result++;
 //		}
 //		
-		System.out.println(result);
-//		
-		br.close();
-	}
-
-}
+		
