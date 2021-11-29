@@ -9,17 +9,19 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int caseNum = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
         int numCount = 0;
         for(int i = 0; i < caseNum; i++){
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            for(int j = 0; j < st.countTokens(); j++) {
+            for(int j = 0; j < st.countTokens(); ){
                 int num = Integer.parseInt(st.nextToken());
+                boolean check = false;
                 for(int k = 2; k < num; k++){
                     if(num % k == 0) {
-                        numCount++;
+                        check = true;
                         break;
                     }
                 }
+                if(check == false && num != 1) numCount++;
             }
         }
         System.out.println(numCount);
