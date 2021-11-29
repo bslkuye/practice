@@ -2,7 +2,7 @@ package practiceFile.other;
 
 import java.util.Random;
 
-public class test {
+public class mazeMake2 {
 	static int gridLength = 49;
 	static int[][] grid = new int[gridLength][gridLength];
 	static int[][] finder = new int[gridLength][gridLength];
@@ -17,7 +17,7 @@ public class test {
 				}else if(grid[i][j] == 2){//벽
 					System.out.print("■ ");
 				}else if(grid[i][j] == 0) {
-					System.out.print("  "); 
+					System.out.print("  ");
 				}
 			}
 			System.out.println("");
@@ -34,6 +34,7 @@ public class test {
 				}else if(finder[i][j] == 0){//벽
 					System.out.print("■ ");
 				}else if(finder[i][j] > 2){//길
+//					System.out.print((finder[i][j] - 2) % 10 + " ");
 					System.out.print("  ");
 				}else System.out.print("o ");
 				
@@ -56,6 +57,7 @@ public class test {
 					grid[x][y] = -1;
 					grid[x+1][y]++;
 					grid[x-1][y]++;
+//					grid[x][y-1]++;
 					grid[x][y+1]++;
 				}else if (grid[x][y+1]<=0) {
 					y++;
@@ -68,6 +70,7 @@ public class test {
 					grid[x+1][y]++;
 					grid[x-1][y]++;
 					grid[x][y-1]++;
+//					grid[x][y+1]++;
 				}else if (grid[x][y-1]<=0) {
 					y--;
 				}
@@ -76,6 +79,7 @@ public class test {
 				if(grid[x-1][y]==1) {
 					x--;
 					grid[x][y] = -1;
+//					grid[x+1][y]++;
 					grid[x-1][y]++;
 					grid[x][y-1]++;
 					grid[x][y+1]++;
@@ -88,6 +92,7 @@ public class test {
 					x++;
 					grid[x][y] = -1;
 					grid[x+1][y]++;
+//					grid[x-1][y]++;
 					grid[x][y-1]++;
 					grid[x][y+1]++;
 				}else if (grid[x+1][y]<=0) {
@@ -106,13 +111,13 @@ public class test {
 		}
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
-				if(grid[i][j] == 1 ) {
+				if(grid[i][j] == 1 ) {//가능한길
 					grid[i][j] = 1;
 				}
-				if(grid[i][j] >= 2){
+				if(grid[i][j] >= 2){//벽
 					grid[i][j] = 2;
 				}
-				if(grid[i][j] <= 0){
+				if(grid[i][j] <= 0){//길
 					grid[i][j] = 0;
 				}
 			}
@@ -136,20 +141,21 @@ public class test {
 
 		finder[1][1] = 3;
 		int stack = 1;			
-		while(finder[gridLength-2][gridLength-2] == 1) {
+		while(finder[gridLength-2][gridLength-2] == 1 && stack < 1000) {
+			if(stack == 999) System.out.println("stack999");
 			stack++;
 			for(int i = 1; i < gridLength-1; i++) {
 				for(int j = 1; j < gridLength-1; j++) {
 					if(finder[i][j] == stack) {
-						if(finder[i - 1][j] < stack && finder[i - 1][j] !=0) finder[i - 1][j] = stack + 1;
-						if(finder[i + 1][j] < stack && finder[i + 1][j] !=0) finder[i + 1][j] = stack + 1;
-						if(finder[i][j - 1] < stack && finder[i][j - 1] !=0) finder[i][j - 1] = stack + 1;
-						if(finder[i][j + 1] < stack && finder[i][j + 1] !=0) finder[i][j + 1] = stack + 1;
+						if(finder[i - 1][j] == 1) finder[i - 1][j] = stack + 1;
+						if(finder[i + 1][j] == 1) finder[i + 1][j] = stack + 1;
+						if(finder[i][j - 1] == 1) finder[i][j - 1] = stack + 1;
+						if(finder[i][j + 1] == 1) finder[i][j + 1] = stack + 1;
 					}
 				}
 			}
 		}
-	
+		System.out.println("rFind3" + stack);
 
 		int a = gridLength - 2;
 		int b = gridLength - 2;
@@ -205,10 +211,10 @@ public class test {
 		while(endCheck == false) {
 			for(int i = 0; i < gridLength; i++) {
 				for(int j = 0; j < gridLength; j++) {
-					grid[i][j] = 0; 
+					grid[i][j] = 0; // 0 길 1 길이뻗을수 있음 2 벽
 					if(i % 2 == 0 && j % 2 == 0) grid[i][j] = 2;
 				}
-			} 
+			} // 격자생성, 초기화
 			
 			for(int i = 0; i < gridLength; i++) {
 				for(int l = 0; l < gridLength; l++) {
@@ -219,7 +225,7 @@ public class test {
 				}
 			}
 			
-			grid[1][1] = 1; 
+			grid[1][1] = 1; //길 시작점
 			grid[2][1] = 1;
 			grid[1][2] = 1;
 			for(int i = 0; i < gridLength; i++) {
@@ -241,13 +247,10 @@ public class test {
 		}
 		roadFind();
 		roadFindPrint();
+		
+//		roadPrint();
 	}
 
 }
-
-
-
-
-
 
 

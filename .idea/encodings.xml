@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="Encoding">
+=======
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+>>>>>>> d53a386a4262028df1f1da3be0d5ac01eb867a7a
     <file url="PROJECT" charset="x-windows-949" />
   </component>
 </project>
