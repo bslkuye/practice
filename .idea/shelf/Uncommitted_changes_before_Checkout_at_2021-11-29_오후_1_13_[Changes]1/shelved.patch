@@ -1,0 +1,41 @@
+Index: src/baekjoon/level8/no1011/Main.java
+===================================================================
+diff --git a/src/baekjoon/level8/no1011/Main.java b/src/baekjoon/level8/no1011/Main.java
+new file mode 100644
+--- /dev/null	
++++ b/src/baekjoon/level8/no1011/Main.java	
+@@ -0,0 +1,34 @@
++package baekjoon.level8.no1011;
++
++import java.io.BufferedReader;
++import java.io.IOException;
++import java.io.InputStreamReader;
++import java.util.StringTokenizer;
++
++public class Main {
++    public static void main(String[] args) throws IOException {
++        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
++        int caseNum = Integer.parseInt(br.readLine());
++        for(int i = 0; i < caseNum; i++){
++            StringTokenizer st = new StringTokenizer(br.readLine());
++            int x = Integer.parseInt(st.nextToken());
++            int y = Integer.parseInt(st.nextToken());
++            int street = y-x;
++            int result = 0;
++            for(int j = 1;;j++){
++                street -= j;
++                result++;
++                if(street < 1) {
++                    System.out.println(result);
++                    break;
++                }
++                street -= j;
++                result++;
++                if(street < 1) {
++                    System.out.println(result);
++                    break;
++                }
++            }
++        }
++    }
++}

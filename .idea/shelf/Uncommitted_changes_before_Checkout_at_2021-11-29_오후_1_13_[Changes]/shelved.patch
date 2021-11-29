@@ -1,0 +1,30 @@
+Index: src/baekjoon/level8/no10757/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package baekjoon.level8.no10757;\r\n\r\nimport java.io.BufferedReader;\r\nimport java.io.IOException;\r\nimport java.io.InputStreamReader;\r\nimport java.math.BigInteger;\r\nimport java.util.StringTokenizer;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) throws IOException {\r\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\r\n        StringTokenizer st = new StringTokenizer(br.readLine());\r\n        BigInteger first = new BigInteger(st.nextToken());\r\n        BigInteger second = new BigInteger(st.nextToken());\r\n\r\n        System.out.println(first.add(second));\r\n\r\n        br.close();\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/baekjoon/level8/no10757/Main.java b/src/baekjoon/level8/no10757/Main.java
+--- a/src/baekjoon/level8/no10757/Main.java	
++++ b/src/baekjoon/level8/no10757/Main.java	
+@@ -8,13 +8,13 @@
+ 
+ public class Main {
+     public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        StringTokenizer st = new StringTokenizer(br.readLine());
+-        BigInteger first = new BigInteger(st.nextToken());
+-        BigInteger second = new BigInteger(st.nextToken());
+-
+-        System.out.println(first.add(second));
+-
+-        br.close();
++//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
++//        StringTokenizer st = new StringTokenizer(br.readLine());
++//        BigInteger first = new BigInteger(st.nextToken());
++//        BigInteger second = new BigInteger(st.nextToken());
++//
++//        System.out.println(first.add(second));
++//
++//        br.close();
+     }
+ }
