@@ -1,4 +1,4 @@
-package level8.no1193;
+package baekjoon.level8.no1193;
 
 import java.io.BufferedReader;
 import java.io.IOException;
