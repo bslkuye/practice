@@ -20,11 +20,11 @@ public class Main {
         }
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
-             if(weightArr[i] > weightArr[j] && highArr[i] > highArr[j]) resultArr[i]++;
+             if(weightArr[i] < weightArr[j] && highArr[i] < highArr[j]) resultArr[i]++;
             }
         }
-        for(int i = 1; i < n; i++){
-            System.out.print(resultArr[i]);
+        for(int i = 0; i < n; i++){
+            System.out.print(resultArr[i] + " ");
 
         }
         br.close();
