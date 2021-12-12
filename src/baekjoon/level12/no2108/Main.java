@@ -35,7 +35,7 @@ public class Main {
                 }
             }
         }
-        System.out.println(summ/n);
+        System.out.println(summ);
         System.out.println(arr[(n+1)/2]);
         System.out.println();
         System.out.println(max - min);
