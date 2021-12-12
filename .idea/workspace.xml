@@ -100,6 +100,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="baekjoon.level11.no7568.Main" />
       <module name="practice" />
@@ -133,6 +134,7 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="baekjoon.level12.no2750.*" />
+
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,11 +143,13 @@
       </method>
     </configuration>
     <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+
       <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no2751.Main" />
       <module name="practice" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="baekjoon.level12.no2751.*" />
+
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,11 +158,13 @@
       </method>
     </configuration>
     <configuration name="Main (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+
       <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no10989.Main" />
       <module name="practice" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="baekjoon.level12.no10989.*" />
+
 
           <option name="ENABLED" value="true" />
         </pattern>
@@ -200,6 +206,7 @@
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
+
       </list>
     </recent_temporary>
   </component>
@@ -234,6 +241,7 @@
       <updated>1638084882678</updated>
     </task>
     <task id="LOCAL-00004" summary="백준_lv10">
+
       <created>1639054384550</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
@@ -241,6 +249,7 @@
       <updated>1639054384550</updated>
     </task>
     <option name="localTasksCounter" value="5" />
+
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
