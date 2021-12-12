@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,9 +73,11 @@
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
 
+
   <component name="RunManager" selected="Application.Main (5)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="level8.no2775.Main" />
+
 
       <module name="practice" />
       <extension name="coverage">
@@ -93,6 +96,7 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="baekjoon.level11.no2798.*" />
+
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,6 +124,7 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="baekjoon.level11.no1018.*" />
+
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,6 +132,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
 
     <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no2750.Main" />
@@ -135,6 +141,7 @@
         <pattern>
           <option name="PATTERN" value="baekjoon.level12.no2750.*" />
 
+
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,6 +149,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
 
       <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no2751.Main" />
@@ -150,6 +158,7 @@
         <pattern>
           <option name="PATTERN" value="baekjoon.level12.no2751.*" />
 
+
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,6 +166,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="Main (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
 
       <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no10989.Main" />
@@ -164,6 +174,7 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="baekjoon.level12.no10989.*" />
+
 
 
           <option name="ENABLED" value="true" />

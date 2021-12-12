@@ -1,5 +1,6 @@
 package baekjoon.level9.no9020;
 
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,6 +37,7 @@ public class Main {
         }
 
         for(int i=0;i<list.size();i++) {
+
             String result = "2 2";
             for(int j = 0; resultList.get(j) <= list.get(i)/2; j++) {
                 for(int k = j; k < resultList.size(); k++){
@@ -45,6 +47,7 @@ public class Main {
                 }
             }
             bw.write(result + "\n");
+
         }
         bw.flush();
         bw.close();
