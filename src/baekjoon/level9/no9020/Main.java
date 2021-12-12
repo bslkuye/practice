@@ -1,6 +1,6 @@
 package baekjoon.level9.no9020;
 
-import javax.swing.*;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,17 +37,17 @@ public class Main {
         }
 
         for(int i=0;i<list.size();i++) {
-            int frontNum = list.get(i)/2;
-            int backNum = list.get(i)/2;
-            while(list.get(i)!=4){
-                if(isPrime[frontNum] && isPrime[backNum]){
-                    bw.write(frontNum + " " + backNum + "\n");
-                    break;
+
+            String result = "2 2";
+            for(int j = 0; resultList.get(j) <= list.get(i)/2; j++) {
+                for(int k = j; k < resultList.size(); k++){
+                    if(resultList.get(j) + resultList.get(k) == list.get(i)){
+                        result = Integer.toString(resultList.get(j)) + " " + Integer.toString(resultList.get(k));
+                    }
                 }
-                frontNum--;
-                backNum++;
             }
-            if(list.get(i)==4) bw.write("2 2\n");
+            bw.write(result + "\n");
+
         }
         bw.flush();
         bw.close();
