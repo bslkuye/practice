@@ -8,36 +8,61 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        int input = Integer.parseInt(br.readLine());
-        int max = input;
-        int min = input;
-        int summ = input;
-        int[] arr = new int[n];
-        int[] count = new int[8001];
-        arr[0] = input;
-        for(int i = 1; i < n; i++){
-            input = Integer.parseInt(br.readLine());
-            arr[i] = input;
+        int summ = 0;
+        int[] count = new int[8001]; // 최빈값용
+        for(int i = 0; i < n; i++){
+            int input = Integer.parseInt(br.readLine());
+            count[input + 4000]++;
             summ += input;
-            if(input > max) {
-                max = input;
-            }else if(input < min) min = input;
         }
-        if(n != 1){
-            for(int i = 0; i < n; i++){
-                for(int j = 0; j < n-1; j++){
-                    int a = arr[j];
-                    int b = arr[j+1];
-                    if(a > b){
-                        arr[j+1] = a;
-                        arr[j] = b;
-                    }
-                }
+
+
+        int countMax = 0;
+        for(int i = 0; i <= 8000; i++){
+            if(count[i] > countMax) countMax = count[i];
+        }
+        int result = 0;
+        boolean countTwo = false;
+        for(int i = 0; i <= 8000; i++){
+            if(count[i] == countMax && countTwo == false) {
+                result = i;
+                countTwo = true;
+            }else if(count[i] == countMax && countTwo == true){
+                result = i;
+                break;
             }
         }
-        System.out.println(summ);
-        System.out.println(arr[(n+1)/2]);
-        System.out.println();
+        int max = 0;
+        for(int i = 8000; i >= 0; i--){
+            if (count[i] != 0) {
+                max = i - 4000;
+                break;
+            }
+        }
+        int min = 0;
+        for(int i = 0; i <= 8000; i++){
+            if (count[i] != 0) {
+                min = i - 4000;
+                break;
+            }
+        }
+
+        System.out.println(Math.round((double)summ / (double)n));
+
+        int checkMiddle = 0;
+        int middleResult = 0;
+        for(int i = 0; i <= 8000; i++){
+            if (count[i] != 0) {
+                checkMiddle++;
+                middleResult = i - 4000;
+            }
+            if(checkMiddle == (n+1)/2 -1){
+                System.out.println(i - 4000);
+                break;
+            }
+        }
+
+        System.out.println(result - 4000);
         System.out.println(max - min);
         br.close();
     }
