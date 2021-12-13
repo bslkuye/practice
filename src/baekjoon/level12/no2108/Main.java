@@ -9,10 +9,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int summ = 0;
-        int input = 0;
-        int[] count = new int[8001]; // 최빈값용
+        int[] count = new int[8001]; // �ֺ󰪿�
         for(int i = 0; i < n; i++){
-            input = Integer.parseInt(br.readLine());
+            int input = Integer.parseInt(br.readLine());
             count[input + 4000]++;
             summ += input;
         }
@@ -51,9 +50,13 @@ public class Main {
         System.out.println(Math.round((double)summ / (double)n));
 
         int checkMiddle = 0;
+        int middleResult = 0;
         for(int i = 0; i <= 8000; i++){
-            checkMiddle += count[i];
-            if(checkMiddle >= (n + 1)/2){
+            if (count[i] != 0) {
+                checkMiddle++;
+                middleResult = i - 4000;
+            }
+            if(checkMiddle == (n+1)/2 -1){
                 System.out.println(i - 4000);
                 break;
             }
