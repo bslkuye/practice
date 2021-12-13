@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a79c033f-53a1-44a5-8c02-e76f981bff38" name="Changes" comment="백준_lv12">
+    <list default="true" id="5766844a-8e99-4917-bccb-95ac7167f2a7" name="Changes" comment="백준_lv11">
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level11/no1018/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level11/no1436/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level11/no2231/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level11/no2798/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level11/no7568/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level9/no11653/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level9/no1929/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level9/no1978/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level9/no2581/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level9/no4948/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level9/no9020/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/baekjoon/level12/no2108/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/baekjoon/level12/no2108/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,13 +28,13 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="baekjoon" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -62,7 +72,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (5)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="level8.no2775.Main" />
+      <module name="practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="level8.no2775.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="level8.no2839.Main" />
       <module name="practice" />
@@ -116,19 +139,6 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no2108.Main" />
-      <module name="practice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="baekjoon.level12.no2108.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="level8.no10250.Main" />
       <module name="practice" />
       <extension name="coverage">
@@ -156,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (5)" />
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -194,49 +204,7 @@
       <option name="project" value="LOCAL" />
       <updated>1638084882678</updated>
     </task>
-    <task id="LOCAL-00004" summary="백준_lv12">
-      <created>1639300098604</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1639300098605</updated>
-    </task>
-    <task id="LOCAL-00005" summary="백준_lv12">
-      <created>1639300378688</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1639300378688</updated>
-    </task>
-    <task id="LOCAL-00006" summary="백준_lv12">
-      <created>1639396065524</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1639396065524</updated>
-    </task>
-    <task id="LOCAL-00007" summary="백준_lv12">
-      <created>1639396159784</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1639396159784</updated>
-    </task>
-    <task id="LOCAL-00008" summary="백준_lv12">
-      <created>1639396218935</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1639396218935</updated>
-    </task>
-    <task id="LOCAL-00009" summary="백준_lv12">
-      <created>1639396426423</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1639396426423</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,8 +221,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="백준_lv8" />
-    <MESSAGE value="백준_lv12" />
-    <option name="LAST_COMMIT_MESSAGE" value="백준_lv12" />
+    <option name="LAST_COMMIT_MESSAGE" value="백준_lv8" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/practice$Main.ic" NAME="Main Coverage Results" MODIFIED="1637975156437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
