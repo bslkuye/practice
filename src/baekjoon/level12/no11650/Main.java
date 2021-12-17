@@ -18,5 +18,3 @@ public class Main {
         br.close();
     }
 }
-//boolean[][] 을 이용한 좌표
-//
