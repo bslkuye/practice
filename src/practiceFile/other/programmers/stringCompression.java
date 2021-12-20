@@ -40,9 +40,10 @@ public class stringCompression {
 }
 
 
+
 /*
 https://programmers.co.kr/learn/courses/30/lessons/60057
-ì²« ë¬¸ìì—´ ì €ì¥í•˜ê³  ë¬¸ì ë°˜ë³µíšŸìˆ˜ ì²´í¬
-resultì— ë°˜ë³µíšŸìˆ˜ì™€ ë¬¸ìì—´ ì…ë ¥
+Ã¹ ¹®ÀÚ¿­ ÀúÀåÇÏ°í ¹®ÀÚ ¹İº¹È½¼ö Ã¼Å©
+result¿¡ ¹İº¹È½¼ö¿Í ¹®ÀÚ¿­ ÀÔ·Â
 
 */
