@@ -9,7 +9,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int summ = 0;
-        int input = 0;
+        int input;
         int[] count = new int[8001]; // 최빈값용
         for(int i = 0; i < n; i++){
             input = Integer.parseInt(br.readLine());
@@ -25,10 +25,11 @@ public class Main {
         int result = 0;
         boolean countTwo = false;
         for(int i = 0; i <= 8000; i++){
-            if(count[i] == countMax && countTwo == false) {
+            if(count[i] == countMax && !countTwo) {
                 result = i;
                 countTwo = true;
-            }else if(count[i] == countMax && countTwo == true){
+            }else if(count[i] == countMax && countTwo){
+
                 result = i;
                 break;
             }
