@@ -10,7 +10,7 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         int summ = 0;
         int input;
-        int[] count = new int[8001]; // �ֺ󰪿�
+        int[] count = new int[8001]; // 최빈값용
         for(int i = 0; i < n; i++){
             input = Integer.parseInt(br.readLine());
             count[input + 4000]++;
@@ -29,6 +29,7 @@ public class Main {
                 result = i;
                 countTwo = true;
             }else if(count[i] == countMax && countTwo){
+
                 result = i;
                 break;
             }
