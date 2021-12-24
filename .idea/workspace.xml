@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86b16f2e-d989-4581-8850-58754a51041a" name="Changes" comment="백준_lv12">
-      <change afterPath="$PROJECT_DIR$/src/baekjoon/level12/no11651/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/baekjoon/level12/no1181/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/baekjoon/level12/no11650/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/baekjoon/level12/no11650/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/baekjoon/level12/no2751/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/baekjoon/level12/no2751/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/baekjoon/level12/no1181/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/baekjoon/level12/no1181/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +24,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -237,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640163547713</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="백준_lv12">
+      <created>1640255859457</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1640255859457</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
