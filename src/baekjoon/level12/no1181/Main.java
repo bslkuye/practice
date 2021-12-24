@@ -11,23 +11,29 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         String[][] arr = new String[51][n];
+        int[] lenArr = new int[51];
 
 
-        for(int i = 0; i < n; i++){
+        for(int i = 1; i < n; i++){
             String input = br.readLine();
             for(int j = 0; j < n; j++){
                 if(arr[input.length()][j] == null){
                     arr[input.length()][j] = input;
+                    lenArr[i]++;
                     break;
                 }
             }
         }
 
-        for(int i = 0; i < n; i++){
-            String result;
+        for(int i = 1; i < n; i++){
+            String[] result = new String[lenArr[i]];
+            for(int j = 0; j < result.length; j++){
+                result[j] = arr[i][j];
+            }
+            Arrays.sort(result);
             for(int j = 0; j < n; j++){
                 if(arr[i][j] != null){
-                    System.out.println(arr[i][j]);
+                    System.out.println(result[j]);
                 }else break;
             }
 
