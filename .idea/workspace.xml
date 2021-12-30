@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-
-    <list default="true" id="a79c033f-53a1-44a5-8c02-e76f981bff38" name="Changes" comment="백준_lv11">
-      <change afterPath="$PROJECT_DIR$/src/baekjoon/level12/no10989/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/baekjoon/level12/no2108/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/baekjoon/level12/no2750/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/baekjoon/level12/no2751/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-11-29__1_13__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-11-29__1_13__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-11-28__3_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-11-28__3_43__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+    <list default="true" id="a79c033f-53a1-44a5-8c02-e76f981bff38" name="Changes" comment="백준_lv12">
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/level14/no15649/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +49,7 @@
     </option>
   </component>
   <component name="ProjectId" id="20i9tHqGu5vPUkhCACbDUF4jVnP" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -72,13 +62,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-
-
   <component name="RunManager" selected="Application.Main (5)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="level8.no2775.Main" />
-
-
       <module name="practice" />
       <extension name="coverage">
         <pattern>
@@ -96,7 +82,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="baekjoon.level11.no2798.*" />
-
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,7 +89,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no2750.Main" />
+      <module name="practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baekjoon.level12.no2750.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="baekjoon.level11.no7568.Main" />
       <module name="practice" />
@@ -118,13 +115,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no2751.Main" />
+      <module name="practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baekjoon.level12.no2751.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="baekjoon.level11.no1018.Main" />
       <module name="practice" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="baekjoon.level11.no1018.*" />
-
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,51 +141,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-
-
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no2750.Main" />
-      <module name="practice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="baekjoon.level12.no2750.*" />
-
-
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-
-    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-
-      <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no2751.Main" />
-      <module name="practice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="baekjoon.level12.no2751.*" />
-
-
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-
     <configuration name="Main (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-
       <option name="MAIN_CLASS_NAME" value="baekjoon.level12.no10989.Main" />
       <module name="practice" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="baekjoon.level12.no10989.*" />
-
-
-
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -212,12 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-
         <item itemvalue="Application.Main (5)" />
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (3)" />
-        <item itemvalue="Application.Main (2)" />
-
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +221,6 @@
       <updated>1638084882678</updated>
     </task>
     <task id="LOCAL-00004" summary="백준_lv10">
-
       <created>1639054384550</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
@@ -260,7 +228,6 @@
       <updated>1639054384550</updated>
     </task>
     <option name="localTasksCounter" value="5" />
-
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
