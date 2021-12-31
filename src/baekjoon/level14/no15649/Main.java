@@ -14,11 +14,23 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
+        loop(M);
 
         br.close();
     }
-    public static void loop(int input){
+    static int[] result = new int[M];
 
+    public static void loop(int input){
+        if(input > 0){
+            for(int i = 0; i <= N; i++){
+                System.out.print(i + " ");
+                loop(input - 1);
+            }
+        }else if(input == 0){
+            for(int i = 1; i <= N; i++){
+                System.out.println(result);
+            }
+        }
     }
 
 }
