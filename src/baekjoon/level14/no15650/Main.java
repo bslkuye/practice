@@ -1,4 +1,4 @@
-package baekjoon.level14.no15649;
+package baekjoon.level14.no15650;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,7 +41,7 @@ public class Main {
         check = true;
         for(int i = 0; i < arr.length - 1; i++){
             for(int j = i + 1; j < arr.length; j++){
-                if(arr[i] == arr[j]){
+                if(arr[i] >= arr[j] ){
                     check = false;
                 }
             }
@@ -50,5 +50,4 @@ public class Main {
     }
 
 }
-
-//https://www.acmicpc.net/problem/15649
+//https://www.acmicpc.net/problem/15650
