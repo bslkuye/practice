@@ -234,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640869427678</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="백준_lv14">
+      <created>1640955774609</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1640955774609</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +260,8 @@
     <MESSAGE value="백준_lv8" />
     <MESSAGE value="백준_lv10" />
     <MESSAGE value="백준_lv11" />
-    <option name="LAST_COMMIT_MESSAGE" value="백준_lv11" />
+    <MESSAGE value="백준_lv14" />
+    <option name="LAST_COMMIT_MESSAGE" value="백준_lv14" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/practice$Main.ic" NAME="Main Coverage Results" MODIFIED="1637975156437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

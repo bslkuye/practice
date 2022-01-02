@@ -8,7 +8,6 @@ import java.util.StringTokenizer;
 public class Main {
     static int N;
     static int M;
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -18,18 +17,17 @@ public class Main {
 
         br.close();
     }
-    static int[] result = new int[M];
+
+    static int[] result = new int[N+1];
 
     public static void loop(int input){
-        if(input > 0){
-            for(int i = 0; i <= N; i++){
-                System.out.print(i + " ");
+        if(input != 0){
+            for(int i = 1; i <= N; i++){
+                result[M-input] = i;
                 loop(input - 1);
             }
-        }else if(input == 0){
-            for(int i = 1; i <= N; i++){
-                System.out.println(result);
-            }
+        }else if(input == 1){
+            System.out.println(result);
         }
     }
 
