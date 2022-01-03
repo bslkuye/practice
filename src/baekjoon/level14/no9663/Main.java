@@ -11,15 +11,20 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
-        makeArr(N);
-        System.out.println(resultCount);
+        if(N > 3){
+            makeArr(N);
+            System.out.println(resultCount);
+        }else{
+            System.out.println("0");
+        }
+
         br.close();
     }
 
     static int[] arr = new int[N];
 
     public static void makeArr(int n){
-        if(n != 0){
+        if(n != 1){
             for(int i = 0; i < N; i++) {
                 arr[N - n] = i;
                 makeArr(n - 1);
@@ -37,7 +42,7 @@ public class Main {
     public static boolean checkArr(int[] Arr){
         boolean check = true;
         for(int i = 0; i < N - 1; i++){
-            for(int j = i; j < N; j++){
+            for(int j = i + 1; j < N; j++){
                 if(Arr[i] == Arr[j]){
                     check = false;
                 }
