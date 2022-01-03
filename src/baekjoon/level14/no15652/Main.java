@@ -1,4 +1,4 @@
-package baekjoon.level14.no15651;
+package baekjoon.level14.no15652;
 
 import java.io.*;
 import java.util.StringTokenizer;
@@ -20,13 +20,11 @@ public class Main {
         br.close();
     }
 
-
-
     public static void loop(int input) throws IOException {
         if(input > 0){
             for(int i = 1; i <= N; i++){
                 result[M-input] = i;
-                if(input == 1){
+                if(input == 1 && checkDuplication(result)){
                     for(int j = 0; j < result.length; j++){
                         bw.write(result[j] + " ");
                     }
@@ -36,6 +34,18 @@ public class Main {
             }
         }
     }
+    static boolean check = true;
+    public static boolean checkDuplication(int[] arr){
+        check = true;
+        for(int i = 0; i < arr.length - 1; i++){
+            for(int j = i + 1; j < arr.length; j++){
+                if(arr[i] > arr[j] ){
+                    check = false;
+                }
+            }
+        }
+        return check;
+    }
 
 }
-//https://www.acmicpc.net/problem/15651
+//https://www.acmicpc.net/problem/15652

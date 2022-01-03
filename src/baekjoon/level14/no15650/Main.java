@@ -20,8 +20,6 @@ public class Main {
         br.close();
     }
 
-
-
     public static void loop(int input){
         if(input > 0){
             for(int i = 1; i <= N; i++){
