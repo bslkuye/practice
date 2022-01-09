@@ -9,14 +9,20 @@ import java.util.StringTokenizer;
 public class Main {
     static int[][] arr = new int[9][9];
     static boolean[] checkArr = new boolean[10];
+    static int nullCount = 0;
+    static int[] ableArr;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for(int i = 0; i < 9; i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
             for(int j = 0; j < 9; j++){
                 arr[i][j] = Integer.parseInt(st.nextToken());
+                if(arr[i][j] == 0){
+                    nullCount++;
+                }
             }
         }
+        ableArr = new int[nullCount];
 
         boolean fix = true;
 
