@@ -9,20 +9,26 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine());
         int[] arr = new int[N];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
         for(int i = 0; i < N; i++){
             arr[i] = Integer.parseInt(st.nextToken());
         }
+
         int[] operatorArr = new int [N-1];
         int operatorArrCount = 0;
+
         for(int i = 0; i < 4; i++){
-            int cost = Integer.parseInt(st.nextToken());
+            StringTokenizer st1 = new StringTokenizer(br.readLine());
+            int cost = Integer.parseInt(st1.nextToken());
             for(int j = 0; j < cost; j++){
                 operatorArr[operatorArrCount] = i;
                 operatorArrCount++;
             }
         }
+        br.close();
 
     }
 
@@ -45,5 +51,7 @@ input
   »¬¼À(-)ÀÇ °³¼ö, °ö¼À(¡¿)ÀÇ °³¼ö, ³ª´°¼À(¡À)ÀÇ °³¼öÀÌ´Ù.
 
 ¼öÀÇ ¼ø¼­´Â ¾È¹Ù²ãµµ µÊ
-arr¿¡
+
+¿¬»êÀÚ ¼¯°í
+¿¬»ê
  */
