@@ -18,7 +18,6 @@ public class Main {
         N = Integer.parseInt(br.readLine());
         statusArr = new int[N][N];
         teamArr = new boolean[N];
-        Arrays.fill(statusArr,0);
         Arrays.fill(teamArr,false);
         for(int i = 0; i < N; i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
@@ -34,13 +33,15 @@ public class Main {
 
     public static void loop(int n){
         if(n == N/2){
-            teamArr[n] = true;
-            checkStatus();
-            teamArr[n] = false;
+            for(int i = n; i < N; i++){
+                teamArr[n] = true;
+                checkStatus();
+                teamArr[n] = false;
+            }
         }else{
-            for(int i = n; i < N/2; i++){
+            for(int i = n; i < N; i++){
                 teamArr[i] = true;
-                loop(n+1);
+                loop(i+1);
                 teamArr[i] = false;
             }
         }
