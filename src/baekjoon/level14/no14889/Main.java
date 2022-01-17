@@ -7,24 +7,27 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
-    static int[][] statusArr;
-    static boolean[] teamArr;
-    static int N;
-    static int teamA = 0;
-    static int teamB = 0;
-    static int result = -1;
+    public static int[][] statusArr;
+    public static boolean[] teamArr;
+    public static int N;
+    public static int teamA = 0;
+    public static int teamB = 0;
+    public static int result = -1;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
         statusArr = new int[N][N];
         teamArr = new boolean[N];
         Arrays.fill(teamArr,false);
+
         for(int i = 0; i < N; i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
-            for(int j = 0; j < N; i++){
+            for(int j = 0; j < N; j++){
                 statusArr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
+
         loop(0);
 
         System.out.println(result);
