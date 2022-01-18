@@ -30,7 +30,7 @@ public class Main {
 
         loop(0);
 
-        System.out.println(result);
+        System.out.println("result = "+result);
         br.close();
     }
 
@@ -38,12 +38,14 @@ public class Main {
         if(n == N/2){
             for(int i = n; i < N; i++){
                 teamArr[n] = true;
+                System.out.println(n + "" + i);
                 checkStatus();
                 teamArr[n] = false;
             }
         }else{
             for(int i = n; i < N; i++){
                 teamArr[i] = true;
+                System.out.println(n + "" + i);
                 loop(i+1);
                 teamArr[i] = false;
             }
