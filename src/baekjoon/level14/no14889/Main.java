@@ -38,14 +38,12 @@ public class Main {
         if(n == N/2){
             for(int i = n; i < N; i++){
                 teamArr[n] = true;
-                System.out.println(n + "" + i);
                 checkStatus();
                 teamArr[n] = false;
             }
         }else{
             for(int i = n; i < N; i++){
                 teamArr[i] = true;
-                System.out.println(n + "" + i);
                 loop(i+1);
                 teamArr[i] = false;
             }
@@ -61,11 +59,14 @@ public class Main {
                 }
             }
         }
+        System.out.println("result = " + Math.abs(teamA - teamB));
         if(result == -1){
             result = Math.abs(teamA - teamB);
         }else if(result > Math.abs(teamA - teamB)){
             result = Math.abs(teamA - teamB);
         }
+        teamB = 0;
+        teamA = 0;
     }
 
 }
