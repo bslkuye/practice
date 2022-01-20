@@ -35,18 +35,16 @@ public class Main {
     }
 
     public static void loop(int n){
-        if(n == N/2){
-            for(int i = n; i < N; i++){
-                teamArr[n] = true;
+        for(int i = n; i < N; i++){
+            teamArr[i] = true;
+            if(n == N/2 - 1){
                 checkStatus();
-                teamArr[n] = false;
-            }
-        }else{
-            for(int i = n; i < N; i++){
-                teamArr[i] = true;
-                loop(i+1);
-                teamArr[i] = false;
-            }
+                for(int j = 0; j < N; j++){
+                    System.out.print(teamArr[j] + " ");
+                }
+                System.out.println("");
+            }else loop(i+1);
+            teamArr[i] = false;
         }
     }
     public static void checkStatus(){
