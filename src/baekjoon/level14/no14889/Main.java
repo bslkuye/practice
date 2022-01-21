@@ -35,7 +35,7 @@ public class Main {
     }
 
     public static void loop(int n){
-        for(int i = n; i < N; i++){
+        for(int i = n; i < N/2+n; i++){
             teamArr[i] = true;
             if(n == N/2 - 1){
                 checkStatus();
@@ -50,14 +50,13 @@ public class Main {
     public static void checkStatus(){
         for(int i = 0; i < N; i++){
             for(int j = 0; j < N; j++){
-                if(teamArr[i] == teamArr[j] && teamArr[i]){//true team
+                if(teamArr[i] == teamArr[j] && teamArr[i]){
                     teamA += statusArr[i][j];
-                }else if(teamArr[i] == teamArr[j] && !teamArr[i]){//false team
+                }else if(teamArr[i] == teamArr[j] && !teamArr[i]){
                     teamB += statusArr[i][j];
                 }
             }
         }
-        System.out.println("result = " + Math.abs(teamA - teamB));
         if(result == -1){
             result = Math.abs(teamA - teamB);
         }else if(result > Math.abs(teamA - teamB)){
