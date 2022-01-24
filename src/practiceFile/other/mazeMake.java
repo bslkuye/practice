@@ -12,10 +12,12 @@ public class mazeMake {
 		System.out.println("rPrint");
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
+
 				if(grid[i][j] == 1 ) {//가능한길
 					System.out.print("□ ");
 				}else if(grid[i][j] == 2){//벽
 					System.out.print("■ ");
+
 				}else if(grid[i][j] == 0) {
 					System.out.print("  ");
 				}
@@ -29,11 +31,13 @@ public class mazeMake {
 		System.out.println("rFindPrint");
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
+
 				if(finder[i][j] == 1 ) {//가능한길
 					System.out.print("  ");
 				}else if(finder[i][j] == 0){//벽
 					System.out.print("■ ");
 				}else if(finder[i][j] > 2){//길
+
 					System.out.print("  ");
 				}else System.out.print("o ");
 				
@@ -105,6 +109,7 @@ public class mazeMake {
 		}
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
+
 				if(grid[i][j] == 1 ) {//가능한길
 					grid[i][j] = 1;
 				}
@@ -112,6 +117,7 @@ public class mazeMake {
 					grid[i][j] = 2;
 				}
 				if(grid[i][j] <= 0){//길
+
 					grid[i][j] = 0;
 				}
 			}
@@ -124,9 +130,11 @@ public class mazeMake {
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength ; j ++) {
 				if(grid[i][j] == 2) {
+
 					finder[i][j] = 0;//벽 0
 				}else {
 					finder[i][j] = 1;//길 1
+
 				}
 			}
 		}
@@ -185,7 +193,9 @@ public class mazeMake {
 				}
 			}
 			
+
 			grid[1][1] = 1; //길 시작점
+
 			grid[2][1] = 1;
 			grid[1][2] = 1;
 			for(int i = 0; i < gridLength; i++) {
@@ -195,6 +205,8 @@ public class mazeMake {
 					}
 				}
 			}
+
+
 
 		}
 		roadFind();
