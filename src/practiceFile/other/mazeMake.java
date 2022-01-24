@@ -12,10 +12,12 @@ public class mazeMake {
 		System.out.println("rPrint");
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
-				if(grid[i][j] == 1 ) {//°¡´ÉÇÑ±æ
-					System.out.print("¡à ");
-				}else if(grid[i][j] == 2){//º®
-					System.out.print("¡á ");
+
+				if(grid[i][j] == 1 ) {//ê°€ëŠ¥í•œê¸¸
+					System.out.print("â–¡ ");
+				}else if(grid[i][j] == 2){//ë²½
+					System.out.print("â–  ");
+
 				}else if(grid[i][j] == 0) {
 					System.out.print("  ");
 				}
@@ -29,11 +31,13 @@ public class mazeMake {
 		System.out.println("rFindPrint");
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
-				if(finder[i][j] == 1 ) {//°¡´ÉÇÑ±æ
+
+				if(finder[i][j] == 1 ) {//ê°€ëŠ¥í•œê¸¸
 					System.out.print("  ");
-				}else if(finder[i][j] == 0){//º®
-					System.out.print("¡á ");
-				}else if(finder[i][j] > 2){//±æ
+				}else if(finder[i][j] == 0){//ë²½
+					System.out.print("â–  ");
+				}else if(finder[i][j] > 2){//ê¸¸
+
 					System.out.print("  ");
 				}else System.out.print("o ");
 				
@@ -50,7 +54,7 @@ public class mazeMake {
 		for(int i = 0; i < 100000 ; i++) {
 			int move = random.nextInt(4);
 			switch(move) {
-			case 0: //»ó y++
+			case 0: //ìƒ y++
 				if(grid[x][y+1]==1) {
 					y++;
 					grid[x][y] = -1;
@@ -61,7 +65,7 @@ public class mazeMake {
 					y++;
 				}
 				break;
-			case 1: //ÇÏ y--
+			case 1: //í•˜ y--
 				if(grid[x][y-1]==1) {
 					y--;
 					grid[x][y] = -1;
@@ -72,7 +76,7 @@ public class mazeMake {
 					y--;
 				}
 				break;
-			case 2: //ÁÂ 
+			case 2: //ì¢Œ 
 				if(grid[x-1][y]==1) {
 					x--;
 					grid[x][y] = -1;
@@ -83,7 +87,7 @@ public class mazeMake {
 					x--;
 				}
 				break;
-			case 3: //¿ì 
+			case 3: //ìš° 
 				if(grid[x+1][y]==1) {
 					x++;
 					grid[x][y] = -1;
@@ -95,7 +99,6 @@ public class mazeMake {
 				}
 			}
 			if(x == gridLength - 2 && y == gridLength - 2) {
-				System.out.println("end!");
 				if(grid[gridLength-2][gridLength-3] == 1)
 					grid[gridLength-2][gridLength-3] = 2;
 				if(grid[gridLength-3][gridLength-2] == 1)
@@ -106,13 +109,15 @@ public class mazeMake {
 		}
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength; j++) {
-				if(grid[i][j] == 1 ) {//°¡´ÉÇÑ±æ
+
+				if(grid[i][j] == 1 ) {//ê°€ëŠ¥í•œê¸¸
 					grid[i][j] = 1;
 				}
-				if(grid[i][j] >= 2){//º®
+				if(grid[i][j] >= 2){//ë²½
 					grid[i][j] = 2;
 				}
-				if(grid[i][j] <= 0){//±æ
+				if(grid[i][j] <= 0){//ê¸¸
+
 					grid[i][j] = 0;
 				}
 			}
@@ -125,9 +130,11 @@ public class mazeMake {
 		for(int i = 0; i < gridLength; i++) {
 			for(int j = 0; j < gridLength ; j ++) {
 				if(grid[i][j] == 2) {
-					finder[i][j] = 0;//º® 0
+
+					finder[i][j] = 0;//ë²½ 0
 				}else {
-					finder[i][j] = 1;//±æ 1
+					finder[i][j] = 1;//ê¸¸ 1
+
 				}
 			}
 		}
@@ -173,9 +180,9 @@ public class mazeMake {
 		while(endCheck == false) {
 			for(int i = 0; i < gridLength; i++) {
 				for(int j = 0; j < gridLength; j++) {
-					grid[i][j] = 0; // 0 ±æ 1 ±æÀÌ»¸À»¼ö ÀÖÀ½ 2 º®
+					grid[i][j] = 0; // 0 ê¸¸ 1 ê¸¸ì´ë»—ì„ìˆ˜ ìžˆìŒ 2 ë²½
 				}
-			} // °ÝÀÚ»ý¼º, ÃÊ±âÈ­
+			} // ê²©ìžìƒì„±, ì´ˆê¸°í™”
 			
 			for(int i = 0; i < gridLength; i++) {
 				for(int l = 0; l < gridLength; l++) {
@@ -186,7 +193,9 @@ public class mazeMake {
 				}
 			}
 			
-			grid[1][1] = 1; //±æ ½ÃÀÛÁ¡
+
+			grid[1][1] = 1; //ê¸¸ ì‹œìž‘ì 
+
 			grid[2][1] = 1;
 			grid[1][2] = 1;
 			for(int i = 0; i < gridLength; i++) {
@@ -196,6 +205,9 @@ public class mazeMake {
 					}
 				}
 			}
+
+
+
 		}
 		roadFind();
 		roadFindPrint();
