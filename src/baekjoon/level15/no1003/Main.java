@@ -1,5 +1,6 @@
 package baekjoon.level15.no1003;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,5 +33,6 @@ public class Main {
             return fibonacci(n-1) + fibonacci(n-2);
         }
     }
+
 }
 //https://www.acmicpc.net/problem/1003
