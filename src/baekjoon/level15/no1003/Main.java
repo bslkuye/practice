@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class Main {
     public static int countZero = 0;
     public static int countOne = 0;
+
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine());
