@@ -43,7 +43,6 @@ public class stringCompression {
 
 /*
 https://programmers.co.kr/learn/courses/30/lessons/60057
-첫 문자열 저장하고 문자 반복횟수 체크
-result에 반복횟수와 문자열 입력
+
 
 */
