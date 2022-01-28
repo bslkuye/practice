@@ -1,4 +1,13 @@
 /bin/
+
+/.idea/.gitignore
+/.idea/encodings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/practice.iml
+/.idea/runConfigurations.xml
+/.idea/vcs.xml
+
 /classes/production/practice/baekjoon/level1/NO1000/Main.class
 /classes/production/practice/baekjoon/level1/no1001/Main.class
 /classes/production/practice/baekjoon/level1/no1008/Main.class
