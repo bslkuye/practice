@@ -1,4 +1,4 @@
-package baekjoon.afterLv15.level15;
+package baekjoon.afterLv15.level15.no1003;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,10 +8,12 @@ import java.util.Arrays;
 public class Main {
     public static int countZero = 0;
     public static int countOne = 0;
-    public static int[] fibArr = new int[41];
-
+    public static int[] zeroArr = new int[41];
+    public static int[] oneArr = new int[41];
     public static void main(String[] args)throws IOException{
-        Arrays.fill(fibArr,-1);
+        Arrays.fill(zeroArr,-1);
+        Arrays.fill(oneArr,-1);
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine());
         int N = 0;
@@ -25,16 +27,17 @@ public class Main {
     }
 
     public static int fibonacci(int n){
-        if(fibArr[n] == -1){
+        if(oneArr[n] == -1){
             if (n == 0) {
-                countZero++;
+                zeroArr[n]++;
                 return 0;
             } else if (n == 1) {
-                countOne++;
+                oneArr[n]++;
                 return 1;
             } else {
-                fibArr[n] = fibonacci(n-1) + fibonacci(n-2);
-                return fibArr[n];
+                zeroArr[n] = zeroArr[n-1] + zeroArr[n-2];
+                oneArr[n] = oneArr[n-1] + oneArr[n-2];
+                return zeroArr[n];
             }
         }else return fibArr[n];
 
