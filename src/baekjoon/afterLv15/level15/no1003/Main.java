@@ -39,7 +39,7 @@ public class Main {
                 oneArr[n] = oneArr[n-1] + oneArr[n-2];
                 return zeroArr[n];
             }
-        }else return fibArr[n];
+        }else return zeroArr[n];
 
 
     }
