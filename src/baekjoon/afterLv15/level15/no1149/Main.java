@@ -10,6 +10,9 @@ public class Main {
     static int N;
     static int[][] paintCost;
     static int result;
+    static int costA;
+    static int costB;
+    static int costC;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
@@ -22,10 +25,10 @@ public class Main {
             paintCost[i][1] = Integer.parseInt(st.nextToken());
             paintCost[i][2] = Integer.parseInt(st.nextToken());
         }
-        int costA = costCheck(0,0);
-        int costB = costCheck(0,1);
-        int costC = costCheck(0,2);
-
+        costA = costCheck(0,0);
+        costB = costCheck(0,1);
+        costC = costCheck(0,2);
+        System.out.println(costA + ""+ costB + "" + costC);
         System.out.println(Math.min(costA,Math.min(costB, costC)));
 
         br.close();
@@ -38,7 +41,7 @@ public class Main {
         int caseB = Math.min(paintCost[n][1]+paintCost[n+1][0],paintCost[n][1]+paintCost[n+1][2]); // 1
         int caseC = Math.min(paintCost[n][2]+paintCost[n+1][0],paintCost[n][2]+paintCost[n+1][1]); // 2
 
-        if (n != N){
+        if (n != N-1){
             if (color == 0) {
                 if(caseC < caseB){ //0 선택하고
                     costCheck(n+1, 2);
@@ -62,10 +65,12 @@ public class Main {
 
             }
         }else{
-            int returnResutl = result;
+            System.out.println(result);
+            int returnResult = result;
             result = 0;
-            return returnResutl;
+            return returnResult;
         }
+        System.out.println("return0");
         return 0;
     }
 
