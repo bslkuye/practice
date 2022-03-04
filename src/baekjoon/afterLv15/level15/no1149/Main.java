@@ -70,7 +70,6 @@ public class Main {
             result = 0;
             return returnResult;
         }
-        System.out.println("return0");
         return 0;
     }
 
