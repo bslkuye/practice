@@ -10,6 +10,7 @@ public class Main {
     static int[][] paintCost;
     static int result;
     static int minResult = -1;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
@@ -32,7 +33,6 @@ public class Main {
 
     public static void costCheck(int n , int color){
         result += paintCost[n][color];
-        int returnResult = 0;
         int caseA = Math.min(paintCost[n+1][0]+paintCost[n+2][1],paintCost[n+1][0]+paintCost[n+2][2]); // color == 0일때 최소값
         int caseB = Math.min(paintCost[n+1][1]+paintCost[n+2][0],paintCost[n+1][1]+paintCost[n+2][2]); // 1
         int caseC = Math.min(paintCost[n+1][2]+paintCost[n+2][0],paintCost[n+1][2]+paintCost[n+2][1]); // 2
