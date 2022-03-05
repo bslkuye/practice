@@ -3,20 +3,17 @@ package baekjoon.afterLv15.level15.no1149;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.BatchUpdateException;
 import java.util.StringTokenizer;
 
 public class Main {
     static int N;
     static int[][] paintCost;
     static int result;
-    static int costA;
-    static int costB;
-    static int costC;
+    static int minResult = -1;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
-        paintCost = new int[N+1][3];
+        paintCost = new int[N+2][3];
 
         for(int i = 0; i < N; i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
@@ -25,52 +22,61 @@ public class Main {
             paintCost[i][1] = Integer.parseInt(st.nextToken());
             paintCost[i][2] = Integer.parseInt(st.nextToken());
         }
-        costA = costCheck(0,0);
-        costB = costCheck(0,1);
-        costC = costCheck(0,2);
-        System.out.println(costA + ""+ costB + "" + costC);
-        System.out.println(Math.min(costA,Math.min(costB, costC)));
+        costCheck(0,0);
+        costCheck(0,1);
+        costCheck(0,2);
 
+        System.out.println(minResult);
         br.close();
     }
 
-    public static int costCheck(int n , int color){
+    public static void costCheck(int n , int color){
         result += paintCost[n][color];
-
-        int caseA = Math.min(paintCost[n][0]+paintCost[n+1][1],paintCost[n][0]+paintCost[n+1][2]); // color == 0일때 최소값
-        int caseB = Math.min(paintCost[n][1]+paintCost[n+1][0],paintCost[n][1]+paintCost[n+1][2]); // 1
-        int caseC = Math.min(paintCost[n][2]+paintCost[n+1][0],paintCost[n][2]+paintCost[n+1][1]); // 2
+        int returnResult = 0;
+        int caseA = Math.min(paintCost[n+1][0]+paintCost[n+2][1],paintCost[n+1][0]+paintCost[n+2][2]); // color == 0일때 최소값
+        int caseB = Math.min(paintCost[n+1][1]+paintCost[n+2][0],paintCost[n+1][1]+paintCost[n+2][2]); // 1
+        int caseC = Math.min(paintCost[n+1][2]+paintCost[n+2][0],paintCost[n+1][2]+paintCost[n+2][1]); // 2
 
         if (n != N-1){
             if (color == 0) {
                 if(caseC < caseB){ //0 선택하고
                     costCheck(n+1, 2);
-                }else{
+                }else if(caseC == caseB && paintCost[n+1][1] > paintCost[n+1][2]){
+                    costCheck(n+1,2);
+                }else {
                     costCheck(n+1, 1);
                 }
 
             } else if (color == 1) {
-                if(caseA < caseC){ //0 선택하고
+                if(caseA < caseC){ //1 선택하고
                     costCheck(n+1, 0);
-                }else{
+                }else if(caseC == caseB && paintCost[n+1][2] > paintCost[n+1][0]){
+                    costCheck(n+1,0);
+                }else {
                     costCheck(n+1, 2);
                 }
 
             } else if (color == 2) {
-                if(caseA < caseB){ //0 선택하고
+                if(caseA < caseB){ //2 선택하고
                     costCheck(n+1, 0);
-                }else{
+                }else if(caseC == caseB && paintCost[n+1][1] > paintCost[n+1][0]){
+                    costCheck(n+1,0);
+                }else {
                     costCheck(n+1, 1);
                 }
 
             }
-        }else{
-            System.out.println(result);
-            int returnResult = result;
-            result = 0;
-            return returnResult;
         }
-        return 0;
+        if(n == N-1){
+            if(minResult == -1) {
+                minResult = result;
+            }else if(minResult > result){
+                minResult = result;
+            }
+
+        }
+        result = 0;
+
     }
 
 
