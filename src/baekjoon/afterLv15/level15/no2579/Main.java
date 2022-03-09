@@ -10,9 +10,8 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
         int[] inputArr = new int[N];
 
-        for(int i = 0; i < N; i++){
-            inputArr[i] = Integer.parseInt(br.readLine());
-        }
+
+
 
     }
 }
@@ -20,7 +19,18 @@ public class Main {
 10 20 30 40 50 60 70 80
 10 00 30 00 50 60 00 80
 
+역순으로 한다고 했을 때 하나 더 먹고 빼던가 바로 빼던가
+
+
 N-1 ,N-2 만큼의 arr을 2,3으로 끊는 경우의 수
+
+마지막에 0이 있다고 치고 2의 갯수에 따른 나누는 방법을 arr로 만들어서 계산
+ex) N = 10
+11을 나누는 방법
+3 3개 2 1개
+3 1개 2 4개
+
+2를 기준으로 나누는게 좋은거같음
 
 
 시작부터 치면 1,2중 몇으로 끊을지
