@@ -1,13 +1,37 @@
 package baekjoon.afterLv15.level15.no1463;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    static int N;
+    static int result = 0;
 
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = Integer.parseInt(br.readLine());
+
+        calculate(N);
+
+        br.close();
     }
 
     public static void calculate(int n){
+        if (n == 1){
+            System.out.println(result);
+        }else{
+            if(n % 3 == 0){
+                result++;
+                calculate(n / 3);
+            }else if (n % 2 == 0){
+                result++;
+                calculate(n / 2);
+            }else {
+                result++;
+                calculate(n - 1);
+            }
+        }
 
     }
 }
