@@ -3,49 +3,45 @@ package baekjoon.afterLv15.level15.no10844;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class Main {
     static int N;
     static int[] resultArr;
-    static int result = 0;
+    static int[][] dp;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
         resultArr = new int[N+1];
-        stairsNum(0,1);
+        dp = new int[N + 1][10];
 
+        for(int i = 0; i < 10; i++){
+            dp[0][i] = 1;
+        }
+
+        int result = 0;
+        for(int i = 1; i < 10; i++){
+            result += stairsNum(N,i);
+        }
         System.out.println(result);
+
         br.close();
 
     }
 
-    public static void stairsNum(int arrNum, int bNum){
-        resultArr[arrNum] = bNum;
-        if(arrNum != N - 1){
-            if (bNum == 0) {
-                stairsNum(arrNum + 1, 1);
+    public static int stairsNum(int arrNum, int bNum){
+        if(dp[arrNum][bNum] == 0){
+            if (bNum != 0 && bNum != 9) {
+                dp[arrNum][bNum] = dp[arrNum - 1][bNum - 1] + dp[arrNum - 1][bNum + 1];
+            } else if (bNum == 0) {
+                dp[arrNum][bNum] = dp[arrNum - 1][bNum + 1];
             } else if (bNum == 9) {
-                stairsNum(arrNum + 1, 8);
-            } else {
-                stairsNum(arrNum + 1, bNum + 1);
-                stairsNum(arrNum + 1, bNum - 1);
+                dp[arrNum][bNum] = dp[arrNum - 1][bNum - 1];
             }
-        } else if (arrNum == N - 1) {
-            result++;
-            if(result > 1000000000){
-                result -= 1000000000;
-            }
-//            for(int i = 0; i < N; i ++){
-//                System.out.print(resultArr[i] + " ");
-//            }
-//            System.out.println("");
         }
 
-        if(bNum != 9 && arrNum == 0){
-            stairsNum(arrNum, bNum + 1);
-        }
-
+        return dp[arrNum][bNum];
     }
 }
 
@@ -53,7 +49,13 @@ public class Main {
 /*
 dp[][] 로 2차 배열을 해서 arr 수와 현재 숫자에 대한 result를 저장
 
+0 1 2 3 4 5 6 7 8 9 arr1
+0 1 2 3 4 5 6(7)8 9 arr2
+0 1 2 3 4 5 6 7 8 9 arr3
+0 1 2 3 4 5 6 7 8 9 arr4
 
+저 위치에서 7은 dp[2][7] 이고 값은 4
+dp[1][8] = dp[2][7] + dp[2][9]
 
 https://www.acmicpc.net/problem/10844
 
