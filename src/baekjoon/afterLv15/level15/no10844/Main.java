@@ -5,14 +5,56 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
+    static int N;
+    static int[] resultArr;
+    static int result = 0;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = Integer.parseInt(br.readLine());
+        resultArr = new int[N+1];
+        stairsNum(0,1);
+
+        System.out.println(result);
+        br.close();
+
+    }
+
+    public static void stairsNum(int arrNum, int bNum){
+        resultArr[arrNum] = bNum;
+        if(arrNum != N - 1){
+            if (bNum == 0) {
+                stairsNum(arrNum + 1, 1);
+            } else if (bNum == 9) {
+                stairsNum(arrNum + 1, 8);
+            } else {
+                stairsNum(arrNum + 1, bNum + 1);
+                stairsNum(arrNum + 1, bNum - 1);
+            }
+        } else if (arrNum == N - 1) {
+            result++;
+            if(result > 1000000000){
+                result -= 1000000000;
+            }
+//            for(int i = 0; i < N; i ++){
+//                System.out.print(resultArr[i] + " ");
+//            }
+//            System.out.println("");
+        }
+
+        if(bNum != 9 && arrNum == 0){
+            stairsNum(arrNum, bNum + 1);
+        }
 
     }
 }
 
 
 /*
+dp[][] 로 2차 배열을 해서 arr 수와 현재 숫자에 대한 result를 저장
+
+
+
 https://www.acmicpc.net/problem/10844
 
 쉬운 계단 수
