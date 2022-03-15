@@ -3,41 +3,41 @@ package baekjoon.afterLv15.level15.no10844;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class Main {
     static int N;
     static int[] resultArr;
-    static int[][] dp;
+    static long[][] dp;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
         resultArr = new int[N+1];
-        dp = new int[N + 1][10];
+        dp = new long[N+1][10];
 
         for(int i = 0; i < 10; i++){
             dp[0][i] = 1;
         }
 
-        int result = 0;
+        long result = 0;
         for(int i = 1; i < 10; i++){
-            result += stairsNum(N,i);
+            result += stairsNum(N-1,i);
         }
-        System.out.println(result);
+        System.out.println(result % 1000000000);
 
         br.close();
 
     }
 
-    public static int stairsNum(int arrNum, int bNum){
+    public static long stairsNum(int arrNum, int bNum){
         if(dp[arrNum][bNum] == 0){
             if (bNum != 0 && bNum != 9) {
-                dp[arrNum][bNum] = dp[arrNum - 1][bNum - 1] + dp[arrNum - 1][bNum + 1];
+                dp[arrNum][bNum] += stairsNum(arrNum - 1, bNum + 1) % 1000000000;
+                dp[arrNum][bNum] += stairsNum(arrNum - 1, bNum - 1) % 1000000000;
             } else if (bNum == 0) {
-                dp[arrNum][bNum] = dp[arrNum - 1][bNum + 1];
+                dp[arrNum][bNum] = stairsNum(arrNum - 1, bNum + 1) % 1000000000;
             } else if (bNum == 9) {
-                dp[arrNum][bNum] = dp[arrNum - 1][bNum - 1];
+                dp[arrNum][bNum] = stairsNum(arrNum - 1, bNum - 1) % 1000000000;
             }
         }
 
