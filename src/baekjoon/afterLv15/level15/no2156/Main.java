@@ -22,7 +22,7 @@ public class Main {
         if(N >= 2) dp[2] = insArr[1] + insArr[2];
         if(N >= 3) dp[3] = insArr[1] + insArr[2] + insArr[3];
 
-        System.out.println(drink(N));
+        System.out.println(Math.max(drink(N),drink(N+1)));
 
 
         br.close();
