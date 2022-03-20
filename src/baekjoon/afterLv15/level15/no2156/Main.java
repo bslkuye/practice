@@ -22,7 +22,7 @@ public class Main {
         if(N >= 2) dp[2] = insArr[1] + insArr[2];
         if(N >= 3) dp[3] = insArr[1] + insArr[2] + insArr[3];
 
-        System.out.println(Math.max(drink(N),drink(N+1)));
+        System.out.println(drink(N));
 
 
         br.close();
@@ -33,8 +33,9 @@ public class Main {
         if(n <= 0) return 0;
 
         if(dp[n] == 0){
-            dp[n] = Math.max(drink(n - 2) + insArr[n], drink(n - 3) + insArr[n - 1] + insArr[n]);
+            dp[n] = Math.max(drink(n - 2), drink(n - 3) + insArr[n - 1]) + insArr[n];
         }
+        System.out.println(dp[n] + " " + n);
 
         return dp[n];
     }
