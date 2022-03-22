@@ -6,21 +6,43 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
+
+    static int N;
+    static int[] insArr;
+    static int[] dp;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int N = Integer.parseInt(br.readLine());
-        int[] insArr = new int[N+1];
+        N = Integer.parseInt(br.readLine());
+        insArr = new int[N+1];
+        dp = new int[N+1];
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        for (int i = 0; i < N; i++){
+        for (int i = 1; i <= N; i++){
             insArr[i] = Integer.parseInt(st.nextToken());
         }
 
+        System.out.println(sequence(N));
 
         br.close();
     }
+
+    public static int sequence(int n){
+        if (dp[n] == 0) {
+            dp[n] = 1;
+            for (int i = n - 1; i >= 1; i--){
+                if(insArr[n] > insArr[i]){
+                    dp[n] = Math.max(sequence(i)+1,dp[n]);
+                }
+            }
+        }
+
+
+        return dp[n];
+    }
+
 }
 /*
 수열 같은 차를 가지는 수의 배열인데
@@ -28,6 +50,9 @@ public class Main {
 수열의 시작과 수열의 차
 등차수열인가? 아닌가?
 증가하는 수열이니까 증가만 하면 되나
+
+큰 수부터 시작할 때 이전에 작은 수를 찾고 그 수의 dp 가져오고 끝까지 내려서 가장 높은 return값 찾기
+
 
 https://www.acmicpc.net/problem/11053
 
