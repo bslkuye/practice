@@ -24,6 +24,9 @@ public class solution {
 
         for(int i=3; i<=N; i++) {
             dp[i] = Math.max(dp[i - 1], Math.max(dp[i - 2], dp[i - 3] + wine[i - 1]) + wine[i]);
+            /*
+            i 순서를 마시지 않거나 전거만 안먹거나 2개 전거만 안먹거나
+             */
         }
 
         System.out.println(dp[N]);
