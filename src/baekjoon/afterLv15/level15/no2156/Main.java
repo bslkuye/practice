@@ -20,24 +20,16 @@ public class Main {
 
         dp[1] = insArr[1];
         if(N >= 2) dp[2] = insArr[1] + insArr[2];
-        if(N >= 3) dp[3] = insArr[1] + insArr[2] + insArr[3];
 
-        System.out.println(drink(N));
+        for(int i = 3; i <= N; i++){
+            dp[i] = Math.max(dp[i-1], Math.max(dp[i-2], dp[i-3] + insArr[i-1]) + insArr[i]);
+        }
+
+        System.out.println(dp[N]);
 
 
         br.close();
 
-    }
-
-    public static int drink(int n){
-        if(n <= 0) return 0;
-
-        if(dp[n] == 0){
-            dp[n] = Math.max(drink(n - 2), drink(n - 3) + insArr[n - 1]) + insArr[n];
-        }
-        System.out.println(dp[n] + " " + n);
-
-        return dp[n];
     }
 
 }
