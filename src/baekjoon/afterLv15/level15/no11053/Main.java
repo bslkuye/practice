@@ -24,7 +24,15 @@ public class Main {
             insArr[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(sequence(N));
+        int result = 0;
+
+        for(int i = 1; i <=N; i++){
+            if(result<sequence(i)){
+                result = dp[i];
+            }
+        }
+
+        System.out.println(result);
 
         br.close();
     }
