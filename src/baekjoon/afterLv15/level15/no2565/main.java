@@ -27,6 +27,7 @@ public class main {
 가장 많이 겹치는 전깃줄을 없애면 될 것 같음
 
 
+
 https://www.acmicpc.net/problem/2565
 
 전깃줄
