@@ -14,7 +14,7 @@ public class main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
         arr = new int[N+1];
-        dp = new int[N+1]
+        dp = new int[N+1];
 
         for (int i = 1; i <= N; i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
