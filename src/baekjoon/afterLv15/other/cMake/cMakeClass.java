@@ -7,22 +7,22 @@ public class cMakeClass {
         public String personality;
         public String job;
 
-//        public Human(){
-//            this("noName","noPersonality","noJob");
-//        }
-//
-//        public Human(String name, String personality, String job){
-//            this.job = job;
-//            this.personality = personality;
-//            this.name = name;
-//        }
-//
+        public Human(){
+            this("noName","noPersonality","noJob");
+        }
 
-//        public void firstSet(String name, String personality, String job){
-//            this.name = name;
-//            this.personality = personality;
-//            this.job = job;
-//        }
+        public Human(String name, String personality, String job){
+            this.job = job;
+            this.personality = personality;
+            this.name = name;
+        }
+
+
+        public void firstSet(String name, String personality, String job){
+            this.name = name;
+            this.personality = personality;
+            this.job = job;
+        }
 
 
 
