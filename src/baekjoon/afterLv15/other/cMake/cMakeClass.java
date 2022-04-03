@@ -6,6 +6,10 @@ public class cMakeClass {
         public String name;
         public String personality;
         public String job;
+        public boolean gender;
+        public int age;
+        public int hp;
+        public int inteli;
 
         public Human(){
             this("noName","noPersonality","noJob");
