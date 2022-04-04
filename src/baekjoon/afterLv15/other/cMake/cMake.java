@@ -11,18 +11,28 @@ public class cMake {
         String input;
 
         while(true){
+            System.out.print("input order : ");
             input = br.readLine();
             switch (input){
                 case "make":
                     System.out.print("input name, personality, job : ");
                     StringTokenizer st = new StringTokenizer(br.readLine());
+                    Human hum = new Human(st.nextToken(), st.nextToken(), st.nextToken());
+                    break;
 
+                case "print":
+                    System.out.print("input name : ");
+                    StringTokenizer st1 = new StringTokenizer(br.readLine());
+                    break;
+
+                case "end":
+                    break;
 
             }
 
         }
+
+
     }
-
-
 
 }
