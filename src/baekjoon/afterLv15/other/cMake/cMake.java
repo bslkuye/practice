@@ -25,6 +25,12 @@ public class cMake {
                     StringTokenizer st1 = new StringTokenizer(br.readLine());
                     break;
 
+                case "change" :
+                    System.out.print("input change :");
+                    StringTokenizer st2 = new StringTokenizer(br.readLine());
+
+                    break;
+
                 case "end":
                     break;
 
