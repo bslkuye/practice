@@ -17,7 +17,8 @@ public class cMake {
                 case "make":
                     System.out.print("input name, personality, job : ");
                     StringTokenizer st = new StringTokenizer(br.readLine());
-                    Human hum = new Human(st.nextToken(), st.nextToken(), st.nextToken());
+                    String Name = st.nextToken();
+                    Human name = new Human(st.nextToken(), st.nextToken(), st.nextToken());
                     break;
 
                 case "print":
