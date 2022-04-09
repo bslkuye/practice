@@ -3,43 +3,51 @@ package baekjoon.afterLv15.level15.no2565;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
-public class main {
-    static int N;
-    static int[] arr;
-    static int[] dp;
+public class solution {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        N = Integer.parseInt(br.readLine());
-        arr = new int[N+1];
-        dp = new int[N+1];
+        int N = Integer.parseInt(br.readLine());
+        int[][] pole = new int[N][2];
+        int[] dp = new int[N];
 
-        for (int i = 1; i <= N; i++){
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            arr[i] = Integer.parseInt(st.nextToken()) * 1000 + Integer.parseInt(st.nextToken());
+        StringTokenizer st;
+        for(int i=0; i<N; i++) {
+            st = new StringTokenizer(br.readLine());
+            pole[i][0] = Integer.parseInt(st.nextToken());
+            pole[i][1] = Integer.parseInt(st.nextToken());
         }
 
-        check();
+        Arrays.sort(pole, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0] - o2[0];
+            }
+        });
 
+        for(int i=0; i<N; i++) {
+            dp[i] = 1;
 
-        br.close();
-
-    }
-
-    public static void check(){
-
-        for(int i = 1; i <= N; i++){
-            for(int j = 1; j <= N; j++){
-                if(arr[i] > arr[j] && arr[i] % 1000 < arr[j] % 1000){
-                    dp[i]++;
-                }else if(arr[i] < arr[j] && arr[i] % 1000 > arr[j] % 1000){
-                    dp[i]++;
-                }
+            for(int j=0; j<i; j++) {
+                if(pole[j][1] < pole[i][1])
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
             }
         }
+
+        int max = Integer.MIN_VALUE;
+        for(int i=0; i<N; i++) {
+            max = Math.max(max, dp[i]);
+        }
+
+        System.out.println(N - max);
+
+        br.close();
     }
+
 }
 /*
 가장 많이 겹치는 전깃줄을 없애면 될 것 같음
