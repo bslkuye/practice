@@ -10,14 +10,15 @@ public class cMake {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input;
 
-        while(true){
+        boolean endInput = true;
+        while(endInput){
             System.out.print("input order : ");
             input = br.readLine();
+
             switch (input){
                 case "make":
                     System.out.print("input name, personality, job : ");
                     StringTokenizer st = new StringTokenizer(br.readLine());
-                    String Name = st.nextToken();
                     Human name = new Human(st.nextToken(), st.nextToken(), st.nextToken());
                     break;
 
@@ -29,15 +30,19 @@ public class cMake {
                 case "change" :
                     System.out.print("input change :");
                     StringTokenizer st2 = new StringTokenizer(br.readLine());
-
                     break;
 
                 case "end":
+                    endInput = false;
                     break;
 
             }
 
         }
+
+        System.out.println("it's over.");
+
+        br.close();
 
 
     }
