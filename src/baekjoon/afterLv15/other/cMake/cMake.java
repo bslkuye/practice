@@ -15,6 +15,7 @@ public class cMake {
             System.out.print("input order : ");
             input = br.readLine();
 
+
             switch (input){
                 case "make":
                     System.out.print("input name, personality, job : ");

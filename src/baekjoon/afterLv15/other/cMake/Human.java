@@ -4,10 +4,10 @@ public class Human{
     public String name;
     public String personality;
     public String job;
-    public boolean gender;
-    public int age;
-    public int hp;
-    public int ip;
+    public boolean gender = true;
+    public int age = 1;
+    public int hp = 100;
+    public int ip = 100;
 
     public Human(){
         this("noName","noPersonality","noJob");
