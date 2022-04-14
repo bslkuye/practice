@@ -6,13 +6,13 @@ import java.io.InputStreamReader;
 
 public class MapAndMove {
     public static int N;
-    public static int[][] mapArr;
+    public static int[][][] mapArr;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
 
-        mapArr = new int[N][N];
+        mapArr = new int[N][N][4];
 
         br.close();
     }
@@ -28,3 +28,9 @@ public class MapAndMove {
         }
     }
 }
+
+/*
+
+
+¡Ù¡Ú¡Û£À¡Ø
+ */
