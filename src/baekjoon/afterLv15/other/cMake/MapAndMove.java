@@ -22,7 +22,7 @@ public class MapAndMove {
 
         for(int i = 0; i < N; i++){
             for (int j = 0; j < N; j++){
-                System.out.print(mapArr[i][j]);
+                System.out.print(mapArr[i][j][3]);
             }
             System.out.println("");
         }
